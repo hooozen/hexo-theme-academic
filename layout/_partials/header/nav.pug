@@ -1,0 +1,10 @@
+
+.nav
+  .nav-logo(style={ 'background-image': `url(${url_for(theme.logo)})` } )
+  .nav-title No One's Page
+  .nav-items-outer
+    .nav-item Home
+    .nav-item Publication
+    .nav-item Talks
+  .nav-light-toggle
+    != partial('_partials/_components/toggle.pug')

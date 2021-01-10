@@ -1,0 +1,60 @@
+@import "_components/toggle.scss";
+
+.nav {
+  height: 60px;
+  width: 100%;
+  position: relative;
+}
+
+@media(min-width: 1200px) {
+  .nav {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+}
+
+.nav-logo {
+  position: absolute;
+  left: 0;
+  display: inline-block;
+  height: 40px;
+  width: 40px;
+  margin: 10px;
+  border-radius: 20px;
+  background-size: 40px 40px;
+  
+}
+.nav-title {
+  position: absolute;
+  left: 60px;
+  display: inline-block;
+  line-height: 60px;
+  font-size: 1.2em;
+  height: 60px;
+}
+.nav-items-outer {
+  height: 60px;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  margin-left: 240px;
+  margin-right: 60px;
+}
+.nav-item {
+  &:hover {
+    color: #aaa;
+  }
+  cursor: pointer;
+  top: 0;
+  transition: color 200ms ease-out;
+  margin: 20px;
+  padding: 8px;
+}
+.nav-light-toggle {
+  position: absolute;
+  right: 20px;
+  top: 0;
+  height: 60px;
+  line-height: 60px;
+}
+

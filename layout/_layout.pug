@@ -1,0 +1,20 @@
+doctype html
+html(lang=config.language)
+  head
+    !=partial('_partials/head/head.pug', {}, {})
+    block title
+  body(itemscope itemtype="http://schema.org/WebPage")
+    .container
+
+      .header(itemscope itemtype="http://schema.org/WPHeader")
+        .header-inner
+          include _partials/header/index.pug
+      
+      .main
+        .main__content
+
+          .sidebar
+            block sidebar
+    
+          .main__content-inner
+            block content

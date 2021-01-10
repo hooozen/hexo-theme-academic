@@ -1,0 +1,11 @@
+extends _layout.pug
+
+block sidebar
+  include _partials/author-overview/index.pug
+
+
+block content
+  - const index_post = site.posts.data.find(p => p.is_index);
+
+  != partial("_macro/post.pug", { post: index_post, is_index: true })
+

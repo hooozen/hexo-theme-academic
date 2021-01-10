@@ -1,0 +1,24 @@
+
+favicon:
+  small: /images/favicon-16x16-academic.png
+  medium: /images/favicon-32x32-academic.png
+  apple_touch_icon: /images/apple-touch-icon-academic.png
+  safari_pinned_tab: /images/logo.svg
+
+logo: /images/logo-academic.jpeg
+
+author:
+  name: Albert Einstein
+  face: /images/author-face.jpeg
+  # motto: God does not play dice with the universe
+  field: Physics
+  institution: KaiserWilhelm Institut für Physik
+
+cache:
+  enable: false
+
+sidebar: 
+  display: true
+
+css: css
+

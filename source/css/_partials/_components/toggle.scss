@@ -1,0 +1,43 @@
+
+.toggle {
+  display: inline-block;
+}
+.toggle__track {
+  position: relative;
+  width: 30px;
+  height: 20px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+.toggle__track--off {
+  @extend .toggle__track;
+  background-color: #444;
+}
+.toggle__track--on {
+  @extend .toggle__track;
+  background-color: #e0e0e0;
+}
+
+.toggle__btn-outer {
+  position: absolute;
+  right: 0;
+  height: 20px;
+  padding: 2px;
+  width: 20px;
+  box-sizing: border-box;
+}
+
+
+.toggle__btn {
+  height: 16px;
+  border-radius: 10px;
+  width: 16px;
+}
+.toggle__btn--off {
+  @extend .toggle__btn;
+  background-color: #fff;
+}
+.toggle__btn--on {
+  @extend .toggle__btn;
+  background-color: #fff;
+}

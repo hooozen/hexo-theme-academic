@@ -1,0 +1,14 @@
+- const {name, degree, motto, field, institution} = theme.author;
+.author-overview-outer
+  .author-overview
+    .author-face(style={'background-image': `url(${url_for(theme.author.face)})`})
+    .author-info
+      .author-name= name
+      if degree
+      .author-degree= degree
+      if motto
+        .author-motto= motto
+      if field
+        .author-field= field
+      if institution
+        .author-institution= institution

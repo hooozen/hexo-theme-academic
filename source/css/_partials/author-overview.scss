@@ -1,0 +1,41 @@
+.author-overview-outer {
+  margin: 40px auto;
+  display: flex;
+  justify-content: flex-end;
+}
+
+
+@media(min-width: 1600px) {
+}
+
+.author-overview {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.author-face {
+  width: 120px;
+  height: 120px;
+  border-radius: 60px;
+  background: {
+    size: 120px 120px;
+  } 
+  margin-bottom: 10px;
+}
+
+.author-info {
+  display: flex;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  line-height: 1.5;
+  font-size: 0.8em;
+}
+
+.author-name {
+  font-size: 1.75em;
+}
+
+.author-motto {
+  font-size: 0.75em;
+}

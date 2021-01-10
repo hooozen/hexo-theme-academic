@@ -1,0 +1,86 @@
+@import "_partials/nav.scss";
+@import "_partials/author-overview.scss";
+
+body {
+  background-color: #fff;
+  font-size: 1em;
+  line-height: 2;
+  color: #444;
+  margin: 0;
+  padding-top: 61px;
+}
+
+.header {
+  background: #fff;
+  width: 100%;
+  border-bottom: 1px #eee solid;
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+}
+
+.main {
+  position: fixed;
+  height: 100%;
+  overflow-y: auto;
+  width: 100%;
+}
+
+.main__content {
+  position: relative;
+  margin: 0 auto;
+  width: 700px;
+}
+
+
+@media(min-width: 1200px) {
+  .main__content {
+    width: 1200px;
+  }
+  .main__content-inner {
+    margin: 0 200px;
+  }
+}
+
+@media(min-width: 1600px) {
+  .main__content {
+    width: 1600px;
+  }
+  .main__content-inner {
+    width: 800px;
+    margin: 0 400px;
+  }
+}
+
+
+@media(max-width: 767px) {
+  .main__content {
+    width: auto;
+  }
+  .main__content-inner {
+    padding: 0 20px;
+  }
+}
+
+.sidebar {
+  width: 400px;
+  position: fixed;
+}
+
+.outline-anchor {
+  text-align: right;
+  position: relative;
+}
+
+.outline {
+  display: inline-block;
+  position: absolute;
+  width: 400px;
+  text-align: left;
+  
+  ol {
+    text-decoration: none; 
+    list-style: none;
+  }
+}
