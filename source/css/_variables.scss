@@ -1,0 +1,45 @@
+// colors
+
+$color-primary: #004D40;
+$color-primary-brighter: #00695C;
+$color-primary-brightset: #00796B;
+
+$color-active: #00695C;
+$color-hover: #00796B;
+
+$color-secondary: #00796B;
+
+$color-complementary: rgb(166, 130, 0);
+
+$color-border: #f0f0f0;
+
+$color-font: #333;
+$color-font-secondary: #444;
+$color-font-bold: #000;
+$color-font-content: #000;
+
+$color-bg: #fff;
+
+//text
+
+@font-face {
+  font-family: quicksand;
+  src: url("./font/quicksand.ttf");
+}
+
+@font-face {
+  font-family: quicksand-light;
+  src: url("./font/quicksand-light.ttf");
+}
+
+
+$font-family: quicksand;
+$font-family-l: quicksand-light;
+
+$font-size-root: 16px;
+$font-size-title: 2rem;
+$font-size: 1rem;
+
+$font-post-title: 4rem;
+
+$line-height: 1.5;

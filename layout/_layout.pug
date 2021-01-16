@@ -13,8 +13,10 @@ html(lang=config.language)
       .main
         .main__content
 
-          .sidebar
-            block sidebar
+          .sidebar-outer
+            .sidebar
+              block sidebar
     
           .main__content-inner
             block content
+  script(src=url_for("js/page.js"))

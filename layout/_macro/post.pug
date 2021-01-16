@@ -1,6 +1,13 @@
 .post-block
+
+  .post-head
+    .post-title= post.title
+    .post-info
+      .post-author= post.author || theme.author.name
+      .post-updated= full_date(post.updated)
+
   .outline-anchor
-    .outline!=toc(post.content)
+    #outline.outline!=toc(post.content)
 
   article.post-main!= post.content
 

@@ -12,3 +12,8 @@
         .author-field= field
       if institution
         .author-institution= institution
+    .author-social
+      a.social-item.icon-email(alt="email" style={ 'background-image': `url(${url_for(theme.icon)})`})
+      a.social-item.icon-scholar(alt="google scholar" style={ 'background-image': `url(${url_for(theme.icon)})`})
+      a.social-item.icon-institution(alt="institution" style={ 'background-image': `url(${url_for(theme.icon)})`})
+

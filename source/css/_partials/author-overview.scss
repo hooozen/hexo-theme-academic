@@ -1,11 +1,8 @@
+@import "../mixins";
+
 .author-overview-outer {
-  margin: 40px auto;
   display: flex;
   justify-content: flex-end;
-}
-
-
-@media(min-width: 1600px) {
 }
 
 .author-overview {
@@ -14,28 +11,51 @@
   align-items: center;
 }
 .author-face {
-  width: 120px;
-  height: 120px;
-  border-radius: 60px;
+  width: 240px;
+  height: 240px;
+  border-radius: 120px;
   background: {
-    size: 120px 120px;
+    size: 240px 240px;
   } 
   margin-bottom: 10px;
 }
 
 .author-info {
   display: flex;
-  display: flex;
   flex-direction: column;
   align-items: center;
-  line-height: 1.5;
-  font-size: 0.8em;
+  font-size: 1em;
+  text-align: center;
+  color: $color-font-secondary;
 }
 
 .author-name {
-  font-size: 1.75em;
+  color: $color-primary;
+  font-size: 2.25rem;
 }
 
 .author-motto {
   font-size: 0.75em;
 }
+
+.author-social {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+
+  .social-item {
+    height: 40px;
+    width: 40px;
+    margin: 0 10px;
+    background-size: 40px;
+    cursor: pointer;
+    transition: 200ms ease-out;
+    &:hover {
+      transform: translateY(-2px);
+    }
+  }
+  @include icon("email", 40, 3);
+  @include icon("scholar", 40, 2);
+  @include icon("institution", 40);
+}
+
