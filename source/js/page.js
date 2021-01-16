@@ -10,13 +10,27 @@ window.onload = main();
 
 
 function main() {
-  var tocEl = $('#outline')
+  var tocEl = $('#outline');
+  var toggleEl = $('#toggle');
   var topMargin = 80;
   var tocElInaitialAbsTop = tocEl.style.top;
   var tocElInaitialTop = getTopDistance2Doc(tocEl);
 
+  var themeIsDark = false;
+
   setTocPos();
-  document.addEventListener("scroll", setTocPos)
+  document.addEventListener("scroll", setTocPos);
+  toggleEl.addEventListener("click", switchTheme);
+  toggleEl.addEventListener("tap", switchTheme);
+
+  function switchTheme() {
+    if (themeIsDark) {
+      toggleEl.className = 'toggle toggle--on'; 
+    } else {
+      toggleEl.className = 'toggle toggle--off'; 
+    }
+    themeIsDark = !themeIsDark;
+  }
 
   function getTopDistance2Doc(node) {
     var res = node.offsetTop || 0;

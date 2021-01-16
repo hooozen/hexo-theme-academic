@@ -11,11 +11,11 @@
   align-items: center;
 }
 .author-face {
-  width: 240px;
-  height: 240px;
-  border-radius: 120px;
+  width: 160px;
+  height: 160px;
+  border-radius: 80px;
   background: {
-    size: 240px 240px;
+    size: 160px 160px;
   } 
   margin-bottom: 10px;
 }
@@ -31,7 +31,7 @@
 
 .author-name {
   color: $color-primary;
-  font-size: 2.25rem;
+  font-size: 1.75rem;
 }
 
 .author-motto {

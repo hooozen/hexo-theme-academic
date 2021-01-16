@@ -1,3 +1,4 @@
+@import "../_variables.scss";
 @import "_components/toggle.scss";
 
 .nav {
@@ -40,15 +41,35 @@
   margin-left: 315px;
   margin-right: 60px;
 }
+.nav-item--active {
+  color: $color-primary-brighter;
+}
+
 .nav-item {
+  position: relative;
+  &::after {
+    position: absolute;
+    height: 1px;
+    width: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    transition: 0.3s ease-out;
+    background-color: transparent;
+    content: '';
+  }
   &:hover {
-    color: #aaa;
+    &::after {
+      width: 100%;
+      background: $color-primary-brightest;
+    }
+    color: $color-primary-brightest;
   }
   cursor: pointer;
   top: 0;
   transition: color 200ms ease-out;
   margin-right: 40px;
-  padding: 8px 0;
+  padding: 4px 0;
 }
 .nav-light-toggle {
   position: absolute;
