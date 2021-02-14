@@ -1,3 +1,5 @@
+@import "../_mixins.scss";
+
 .post-head {
   text-align: center;
   margin-bottom: 30px;
@@ -8,15 +10,17 @@
     family: $font-family-l;
     size: $font-post-title;
   }
+
   line-height: 1.25;
 }
 
 .post-info {
-  display: flex;  
+  display: flex;
   align-items: center;
   justify-content: center;
   color: $color-font-lighter;
   font-size: $font-size-little;
+
   &>div {
     margin-right: 0.5rem;
   }
@@ -28,3 +32,41 @@
   background-color: $color-primary;
 }
 
+.outline-anchor {
+  text-align: right;
+  position: relative;
+}
+
+.outline {
+  display: inline-block;
+  position: absolute;
+  width: 200px;
+  text-align: left;
+  padding-left: 30px;
+  top: 20px;
+  overflow: hidden;
+  box-sizing: border-box;
+
+  ol {
+    text-decoration: none;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+}
+
+.outline {
+
+  @include tablet-desktop() {
+    display: none;
+  }
+
+  @include desktop-large() {
+    display: inline-block;
+  }
+
+  @include desktop-largest {
+    display: inline-block;
+  }
+
+}

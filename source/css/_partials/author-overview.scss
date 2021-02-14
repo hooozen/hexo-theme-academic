@@ -41,7 +41,7 @@
 .author-social {
   display: flex;
   justify-content: space-between;
-  margin-top: 10px;
+  margin-top: 16px;
 
   .social-item {
     height: 40px;
@@ -51,7 +51,7 @@
     cursor: pointer;
     transition: 200ms ease-out;
     &:hover {
-      transform: translateY(-2px);
+      transform: translateY(-3px);
     }
   }
   @include icon("email", 40, 3);

@@ -1,3 +1,4 @@
+@import "../mixins";
 @import "../_variables.scss";
 @import "_components/toggle.scss";
 
@@ -5,12 +6,12 @@
   height: 60px;
   width: 100%;
   position: relative;
-}
-
-@media(min-width: 1200px) {
-  .nav {
-    max-width: 1200px;
-    margin: 0 auto;
+  margin: 0 auto;
+  @include desktop-large {
+    width: 1200px;
+  }
+  @include desktop-largest {
+    width: 1400px;
   }
 }
 
@@ -46,7 +47,10 @@
 }
 
 .nav-item {
+  display: inline-block;
+  text-decoration: none;
   position: relative;
+  color: inherit;
   &::after {
     position: absolute;
     height: 1px;

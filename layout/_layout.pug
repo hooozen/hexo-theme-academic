@@ -2,7 +2,6 @@ doctype html
 html(lang=config.language)
   head
     !=partial('_partials/head/head.pug', {}, {})
-    block title
   body(itemscope itemtype="http://schema.org/WebPage")
     .container
 
@@ -11,12 +10,6 @@ html(lang=config.language)
           include _partials/header/index.pug
       
       .main
-        .main__content
+        block content
 
-          .sidebar-outer
-            .sidebar
-              block sidebar
-    
-          .main__content-inner
-            block content
   script(src=url_for("js/page.js"))
