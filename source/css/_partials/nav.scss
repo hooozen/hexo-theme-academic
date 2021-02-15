@@ -7,11 +7,28 @@
   width: 100%;
   position: relative;
   margin: 0 auto;
+  z-index: 999;
+
   @include desktop-large {
     width: 1200px;
   }
+
   @include desktop-largest {
     width: 1400px;
+  }
+}
+
+.nav-menu-icon {
+  display: none;
+  position: absolute;
+  height: 30px;
+  width: 40px;
+  margin: 15px 10px;
+  background-size: 40px auto;
+  background-repeat: no-repeat;
+  cursor: pointer;
+  @include mobile() {
+    display: block;
   }
 }
 
@@ -22,26 +39,58 @@
   height: 40px;
   width: 40px;
   margin: 10px;
-  border-radius: 20px;
   background-size: 40px 40px;
-  
+
+  @include mobile() {
+    left: 50%;
+    transform: translateX(-30px);
+  }
 }
+
 .nav-title {
   position: absolute;
   left: 60px;
   display: inline-block;
   line-height: 60px;
   font-size: 1.2em;
-  height: 60px;
+
+  @include mobile() {
+    display: none;
+  }
 }
+
 .nav-items-outer {
+  margin-left: 315px;
+  margin-right: 60px;
+  @include mobile() {
+    position: absolute;
+    top: 60px;
+    height: 0;
+    border-bottom: 1px $color-border solid;
+    overflow: hidden;
+    transition: cubic-bezier(0.075, 0.82, 0.165, 1);
+    margin: 0;
+    width: 100%;
+  }
+}
+
+.nav-items {
   height: 60px;
   display: flex;
   justify-content: left;
   align-items: center;
-  margin-left: 315px;
-  margin-right: 60px;
+
+  @include mobile() {
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: flex-start;
+    background-color: #fff;
+    margin: 0;
+    height: 200px;
+    padding-left: 50px;
+  }
 }
+
 .nav-item--active {
   color: $color-primary-brighter;
 }
@@ -51,6 +100,7 @@
   text-decoration: none;
   position: relative;
   color: inherit;
+
   &::after {
     position: absolute;
     height: 1px;
@@ -62,19 +112,27 @@
     background-color: transparent;
     content: '';
   }
+
   &:hover {
     &::after {
       width: 100%;
       background: $color-primary-brightest;
     }
+
     color: $color-primary-brightest;
   }
+
   cursor: pointer;
   top: 0;
   transition: color 200ms ease-out;
   margin-right: 40px;
   padding: 4px 0;
+
+  @include mobile() {
+    margin: 0;
+  }
 }
+
 .nav-light-toggle {
   position: absolute;
   right: 20px;
@@ -82,4 +140,3 @@
   height: 60px;
   line-height: 60px;
 }
-

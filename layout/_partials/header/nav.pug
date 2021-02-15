@@ -1,11 +1,13 @@
 
 .nav
+  .nav-menu-icon(style={ 'background-image': `url(${url_for(theme.icon_menu)})` } )
   .nav-logo(style={ 'background-image': `url(${url_for(theme.logo)})` } )
   .nav-title No One's Page
-  .nav-items-outer
-    a.nav-item(href=url_for('/')) Home
-    a.nav-item(href=url_for('/publications/')) Publications
-    a.nav-item(href=url_for('/talks/')) Talks
-    a.nav-item(href=url_for('/cv/')) CV
+  .nav-items-outer#nav-items-outer
+    .nav-items
+      a.nav-item(href=url_for('/')) Home
+      a.nav-item(href=url_for('/publications/')) Publications
+      a.nav-item(href=url_for('/talks/')) Talks
+      a.nav-item(href=url_for('/cv/')) CV
   .nav-light-toggle
     != partial('_partials/_components/toggle.pug')
