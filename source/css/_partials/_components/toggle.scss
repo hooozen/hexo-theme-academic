@@ -1,7 +1,9 @@
 @keyframes switch-on {
   from {
     transform: translateX(-10px);
-  } to {
+  }
+
+  to {
     transform: translateX(0);
   }
 }
@@ -9,7 +11,9 @@
 @keyframes switch-off {
   from {
     transform: translateX(10px);
-  } to {
+  }
+
+  to {
     transform: translateX(0);
   }
 }
@@ -19,6 +23,7 @@
   display: inline-block;
   transition: 200ms ease-out;
 }
+
 .toggle__track {
   position: relative;
   width: 30px;
@@ -26,6 +31,7 @@
   border-radius: 10px;
   cursor: pointer;
 }
+
 .toggle__btn-outer {
   position: absolute;
   height: 20px;
@@ -33,6 +39,7 @@
   width: 20px;
   box-sizing: border-box;
 }
+
 .toggle__btn {
   height: 16px;
   border-radius: 10px;
@@ -43,22 +50,27 @@
   .toggle__btn-outer {
     left: 0;
   }
+
   .toggle__track {
-    background-color: #444;
+    background-color: #e0e0e0;
   }
+
   .toggle__btn {
     background-color: #fff;
     animation: switch-off 200ms 1 ease-out;
   }
 }
+
 .toggle--on {
   .toggle__btn-outer {
     right: 0;
   }
+
   .toggle__track {
-    background-color: #e0e0e0;
+    background-color: #444;
   }
-   .toggle__btn {
+
+  .toggle__btn {
     background-color: #fff;
     animation: switch-on 200ms 1 ease-out;
   }

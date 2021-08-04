@@ -1,9 +1,9 @@
 
 .nav
-  .nav-menu-icon(style={ 'background-image': `url(${url_for(theme.icon_menu)})` } )
+  .nav-menu-icon#menuToggle(style={ 'background-image': `url(${url_for(theme.icon_menu)})` } )
   .nav-logo(style={ 'background-image': `url(${url_for(theme.logo)})` } )
   .nav-title No One's Page
-  .nav-items-outer#nav-items-outer
+  .nav-items-outer#menu
     .nav-items
       a.nav-item(href=url_for('/')) Home
       a.nav-item(href=url_for('/publications/')) Publications

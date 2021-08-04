@@ -12,3 +12,8 @@ block content
 
       != partial("_macro/post.pug", { post: index_post, is_index: true })
 
+      if theme.comment.enable
+        .comment
+          if theme.gitalk.enable
+            div(id="gitalk-container")
+

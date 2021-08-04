@@ -15,6 +15,12 @@ body {
   color: $color-font;
   margin: 0;
 }
+
+body.dark {
+  background-color: $dark-color-bg;
+  color: $dark-color-font;
+}
+
 h1,h2,h3,h4,h5,h6 {
   padding-top: 61px;
   margin-top: -61px;
@@ -22,10 +28,11 @@ h1,h2,h3,h4,h5,h6 {
 
 .container {
   overflow: hidden;
+  background-color: inherit;
 }
 
 .header {
-  background: $color-bg;
+  background: inherit;
   width: 100%;
   border-bottom: 1px $color-border solid;
   position: fixed;
@@ -33,6 +40,10 @@ h1,h2,h3,h4,h5,h6 {
   right: 0;
   left: 0;
   z-index: 998;
+}
+
+.dark .header {
+  border-color: $color-border-dark;
 }
 
 .main {

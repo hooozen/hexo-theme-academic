@@ -23,5 +23,11 @@ cache:
 sidebar: 
   display: true
 
+comment:
+  enable: true
+
+gitalk:
+  enable: true
+
 css: css
 

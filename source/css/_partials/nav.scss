@@ -65,10 +65,10 @@
   @include mobile() {
     position: absolute;
     top: 60px;
-    height: 0;
+    height: 0px;
     border-bottom: 1px $color-border solid;
     overflow: hidden;
-    transition: cubic-bezier(0.075, 0.82, 0.165, 1);
+    transition: 0.4s cubic-bezier(0.075, 0.82, 0.165, 1);
     margin: 0;
     width: 100%;
   }
@@ -84,7 +84,7 @@
     flex-direction: column;
     justify-content: space-around;
     align-items: flex-start;
-    background-color: #fff;
+    background-color: inherit;
     margin: 0;
     height: 200px;
     padding-left: 50px;

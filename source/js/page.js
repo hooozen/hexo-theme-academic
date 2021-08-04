@@ -16,18 +16,36 @@ function main() {
   var tocElInaitialAbsTop = tocEl.style.top;
   var tocElInaitialTop = getTopDistance2Doc(tocEl);
 
+  var menuEl = $('#menu');
+  var menuToggle = $('#menuToggle');
+
   var themeIsDark = false;
+
+  var isMenuExpand = false;
 
   setTocPos();
   document.addEventListener("scroll", setTocPos);
+
   toggleEl.addEventListener("click", switchTheme);
   toggleEl.addEventListener("tap", switchTheme);
 
+  menuToggle.addEventListener('click', toggleMenu);
+  menuToggle.addEventListener('tap', toggleMenu);
+
+  function toggleMenu() {
+    console.log(menuEl.style.height)
+    if (isMenuExpand) menuEl.style.height = "0px";
+    else menuEl.style.height="200px";
+    isMenuExpand = !isMenuExpand;
+  }
+
   function switchTheme() {
     if (themeIsDark) {
-      toggleEl.className = 'toggle toggle--on'; 
-    } else {
       toggleEl.className = 'toggle toggle--off'; 
+      document.body.className = '';
+    } else {
+      toggleEl.className = 'toggle toggle--on'; 
+      document.body.className = 'dark';
     }
     themeIsDark = !themeIsDark;
   }
