@@ -1,7 +1,9 @@
-meta(charset="UTF-8")
-meta(name="viewport" content="with=device-with, initial-scale=1, maximum-scale=2")
+meta(charset="utf-8")
+meta(name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2.0")
 meta(name="theme-color" content="theme.android_chrome_color")
 meta(name="generator" content="Hexo" + hexo_version)
+
+title theme.author.name
 
 if theme.favicon.apple_touch_icon
   link(rel="apple-touch-icon", sizes="180x180" href=url_for(theme.favicon.apple_touch_icon))
@@ -14,4 +16,6 @@ link(rel="stylesheet" type="text/css" href=`${url_for(theme.css)}/main.css`)
 
 if theme.gitalk.enable
   link(rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css")
-  script(src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js")
+
+!= academic_data('main', academic_config())
+!= academic_js('config.js')

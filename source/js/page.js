@@ -33,7 +33,6 @@ function main() {
   menuToggle.addEventListener('tap', toggleMenu);
 
   function toggleMenu() {
-    console.log(menuEl.style.height)
     if (isMenuExpand) menuEl.style.height = "0px";
     else menuEl.style.height="200px";
     isMenuExpand = !isMenuExpand;
