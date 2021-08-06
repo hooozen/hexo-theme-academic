@@ -10,7 +10,8 @@
   z-index: 999;
 
   @include desktop-large {
-    width: 1200px;
+    width: 100%;
+    max-width: 1400px;
   }
 
   @include desktop-largest {
