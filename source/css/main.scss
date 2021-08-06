@@ -51,7 +51,7 @@ h1,h2,h3,h4,h5,h6 {
   flex-wrap: wrap;
   overflow-y: auto;
   justify-content: center;
-  padding-top: 101px;
+  padding: 101px 0;
   width: 100%;
 }
 
@@ -132,4 +132,15 @@ h1,h2,h3,h4,h5,h6 {
 .comments {
   padding: 20px;
   padding-top: 100px;
+}
+
+.foot {
+  padding: 10px 0;
+  font-size: 14px;
+  color: $color-font-secondary;
+
+  &-item {
+    text-align: center;
+    margin-bottom: 5px;
+  }
 }

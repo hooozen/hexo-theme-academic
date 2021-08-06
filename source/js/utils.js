@@ -93,9 +93,7 @@ Academic.utils = {
   },
 
   registerActiveMenuItem: function () {
-    console.log('xxx')
     document.querySelectorAll('a[href].nav-item').forEach(target => {
-      console.log(target)
       const isSamePath = target.pathname === location.pathname || target.pathname === location.pathname.replace('index.html', '');
       const isSubPath = !CONFIG.root.startsWith(target.pathname) && location.pathname.startsWith(target.pathname);
       target.classList.toggle('nav-item--active', target.hostname === location.hostname && (isSamePath || isSubPath));
