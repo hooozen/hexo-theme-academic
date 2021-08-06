@@ -27,6 +27,7 @@
   background-size: 40px auto;
   background-repeat: no-repeat;
   cursor: pointer;
+
   @include mobile() {
     display: block;
   }
@@ -62,6 +63,7 @@
 .nav-items-outer {
   margin-left: 315px;
   margin-right: 60px;
+
   @include mobile() {
     position: absolute;
     top: 60px;
@@ -91,15 +93,16 @@
   }
 }
 
-.nav-item--active {
-  color: $color-primary-brighter;
-}
-
 .nav-item {
   display: inline-block;
   text-decoration: none;
   position: relative;
   color: inherit;
+  cursor: pointer;
+  top: 0;
+  transition: color 200ms ease-out;
+  margin-right: 40px;
+  padding: 4px 0;
 
   &::after {
     position: absolute;
@@ -122,15 +125,20 @@
     color: $color-primary-brightest;
   }
 
-  cursor: pointer;
-  top: 0;
-  transition: color 200ms ease-out;
-  margin-right: 40px;
-  padding: 4px 0;
-
   @include mobile() {
     margin: 0;
   }
+
+  &--active {
+    color: $color-primary-brighter;
+
+    &::after {
+      width: 100%;
+      background: $color-primary-brighter;
+    }
+  }
+
+
 }
 
 .nav-light-toggle {

@@ -6,24 +6,25 @@
 /**
  * Export theme config
  */
-hexo.extend.helper.register('academic_config', function() {
-  const { theme } = this;
+hexo.extend.helper.register('academic_config', function () {
+  const { config, theme } = this;
   const exportConfig = {
-    comments  : theme.comments,
+    comments: theme.comments,
+    root: config.root,
   };
   return exportConfig;
 });
 
-hexo.extend.helper.register('academic_config_unique', function() {
+hexo.extend.helper.register('academic_config_unique', function () {
   const { page, is_home, is_post } = this;
   return {
-    sidebar  : page.sidebar || '',
-    isHome   : is_home(),
-    isPost   : is_post(),
-    lang     : page.lang,
-    comments : page.comments || '',
+    sidebar: page.sidebar || '',
+    isHome: is_home(),
+    isPost: is_post(),
+    lang: page.lang,
+    comments: page.comments || '',
     permalink: page.permalink || '',
-    path     : page.path || '',
-    title    : page.title || ''
+    path: page.path || '',
+    title: page.title || ''
   };
 });

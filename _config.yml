@@ -30,11 +30,11 @@ gitalk:
   enable: true
   js: https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js
 
-  github_id: # GitHub repo owner
-  repo: # Repository name to store issues
-  client_id: # GitHub Application Client ID
-  client_secret: # GitHub Application Client Secret
-  admin_user: # GitHub repo owner and collaborators, only these guys can initialize gitHub issues
+  github_id: iLnezoH # GitHub repo owner
+  repo: ilnezoh.github.io # Repository name to store issues
+  client_id: 62ee341beddb3d239522 # GitHub Application Client ID
+  client_secret: cb91b55f4004c08a638688f12c5afabcfaebff35 # GitHub Application Client Secret
+  admin_user: iLnezoH # GitHub repo owner and collaborators, only these guys can initialize gitHub issues
   distraction_free_mode: true # Facebook-like distraction free mode
   # When the official proxy is not available, you can change it to your own proxy address
   proxy: https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token # This is official proxy adress

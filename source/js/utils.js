@@ -1,4 +1,5 @@
 void
+
 function () {
   const onPageLoaded = () => document.dispatchEvent(
     new Event('page:loaded'), {
@@ -16,7 +17,7 @@ function () {
 }()
 
 Academic.utils = {
-    getScript: function(src, options = {}, legacyCondition) {
+  getScript: function (src, options = {}, legacyCondition) {
     if (typeof options === 'function') {
       return this.getScript(src, {
         condition: legacyCondition
@@ -24,15 +25,15 @@ Academic.utils = {
     }
     const {
       condition = false,
-      attributes: {
-        id = '',
-        async = false,
-        defer = false,
-        crossOrigin = '',
-        dataset = {},
-        ...otherAttributes
-      } = {},
-      parentNode = null
+        attributes: {
+          id = '',
+          async = false,
+          defer = false,
+          crossOrigin = '',
+          dataset = {},
+          ...otherAttributes
+        } = {},
+        parentNode = null
     } = options;
     return new Promise((resolve, reject) => {
       if (condition) {
@@ -53,7 +54,10 @@ Academic.utils = {
         script.onerror = reject;
 
         if (typeof src === 'object') {
-          const { url, integrity } = src;
+          const {
+            url,
+            integrity
+          } = src;
           script.src = url;
           if (integrity) {
             script.integrity = integrity;
@@ -86,5 +90,16 @@ Academic.utils = {
       });
       intersectionObserver.observe(element);
     });
-  }
+  },
+
+  registerActiveMenuItem: function () {
+    console.log('xxx')
+    document.querySelectorAll('a[href].nav-item').forEach(target => {
+      console.log(target)
+      const isSamePath = target.pathname === location.pathname || target.pathname === location.pathname.replace('index.html', '');
+      const isSubPath = !CONFIG.root.startsWith(target.pathname) && location.pathname.startsWith(target.pathname);
+      target.classList.toggle('nav-item--active', target.hostname === location.hostname && (isSamePath || isSubPath));
+    });
+  },
+
 }
