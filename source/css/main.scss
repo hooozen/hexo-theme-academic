@@ -73,12 +73,15 @@ h6 {
   position: relative;
 
   @include desktop-large {
-    width: 100%;
-    max-width: 1400px;
+    width: 1200px;
   }
 
-  @include desktop-largest {
-    width: 1400px;
+  &.main__content--index {
+    @include desktop-large {
+      width: 100%;
+      max-width: 1400px;
+    }
+
   }
 }
 
