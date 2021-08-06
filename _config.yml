@@ -17,6 +17,8 @@ author:
   field: Physics
   institution: KaiserWilhelm Institut für Physik
   email: hozen@live.com
+  googleScholar: https://scholar.google.com
+  institutionLink: https://scholar.google.com
 
 cache:
   enable: false
