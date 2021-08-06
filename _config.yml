@@ -11,14 +11,14 @@ icon: /images/icon-spider.png
 icon_menu: /images/icon-menu.png
 
 author:
-  name: Albert Einstein
-  face: /images/author-face.jpeg
+  name: Lei Li
+  face: /images/author-face.jpg
   # motto: God does not play dice with the universe
-  field: Physics
-  institution: KaiserWilhelm Institut für Physik
-  email: hozen@live.com
-  googleScholar: https://scholar.google.com
-  institutionLink: https://scholar.google.com
+  field: 我不知道
+  institution: biomedical science
+  email: lilei_sky_0909@163.com
+  googleScholar: https://scholar.google.com/citations?hl=en&user=--CYiuwAAAAJ
+  institutionLink: https://eng.ox.ac.uk/
 
 cache:
   enable: false
@@ -33,11 +33,11 @@ gitalk:
   enable: true
   js: https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js
 
-  github_id: iLnezoH # GitHub repo owner
-  repo: ilnezoh.github.io # Repository name to store issues
-  client_id: 62ee341beddb3d239522 # GitHub Application Client ID
-  client_secret: cb91b55f4004c08a638688f12c5afabcfaebff35 # GitHub Application Client Secret
-  admin_user: iLnezoH # GitHub repo owner and collaborators, only these guys can initialize gitHub issues
+  github_id: marie0909 # GitHub repo owner
+  repo: marie0909.github.io # Repository name to store issues
+  client_id: 392609484cf5d6f9875b # GitHub Application Client ID
+  client_secret: afeadfb746568b02b80c51c676a02fd832e91038 # GitHub Application Client Secret
+  admin_user: marie0909  # GitHub repo owner and collaborators, only these guys can initialize gitHub issues
   distraction_free_mode: true # Facebook-like distraction free mode
   # When the official proxy is not available, you can change it to your own proxy address
   proxy: https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token # This is official proxy adress

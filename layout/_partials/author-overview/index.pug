@@ -13,7 +13,7 @@
       if institution
         .author-institution= institution
     .author-social
-      a(href="mailto:" + theme.author.email).social-item.icon-email(alt="email" style={ 'background-image': `url(${url_for(theme.icon)})`})
-      a(href=theme.author.googleScholar).social-item.icon-scholar(alt="google scholar" style={ 'background-image': `url(${url_for(theme.icon)})`})
-      a(href=theme.author.institutionLink).social-item.icon-institution(alt="institution" style={ 'background-image': `url(${url_for(theme.icon)})`})
+      a.social-item.icon-email(href="mailto:" + theme.author.email alt="email" style={ 'background-image': `url(${url_for(theme.icon)})`})
+      a.social-item.icon-scholar(href=theme.author.googleScholar alt="google scholar" style={ 'background-image': `url(${url_for(theme.icon)})`})
+      a.social-item.icon-institution(href=theme.author.institutionLink alt="institution" style={ 'background-image': `url(${url_for(theme.icon)})`})
 

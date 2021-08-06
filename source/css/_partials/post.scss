@@ -40,7 +40,7 @@
 .outline {
   display: inline-block;
   position: absolute;
-  width: 200px;
+  width: 300px;
   text-align: left;
   padding-left: 30px;
   top: 20px;
@@ -57,13 +57,13 @@
 
 .outline {
 
-  @include tablet-desktop() {
+  display: inline-block;
+
+  @include tablet-mobile() {
     display: none;
   }
 
-  @include desktop-large() {
-    display: inline-block;
-  }
+  @include desktop-large() {}
 
   @include desktop-largest {
     display: inline-block;
