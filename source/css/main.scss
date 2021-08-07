@@ -95,6 +95,7 @@ h6 {
     margin-right: 0;
     padding: 0 30px;
   }
+
 }
 
 .main__content--index .main__content-inner {
@@ -105,9 +106,15 @@ h6 {
     margin: 0;
   }
 
-  @include tablet {
+  @include tablet-mobile {
     margin-right: 0;
   }
+
+  @include tablet {
+    margin-right: 0;
+    padding: 0 30px;
+  }
+
 }
 
 .sidebar-outer {
