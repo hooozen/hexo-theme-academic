@@ -1,6 +1,6 @@
 
 .nav
-  .nav-menu-icon#menuToggle(style={ 'background-image': `url(${url_for(theme.icon_menu)})` } )
+  include ../_components/menu_btn.pug
   .nav-logo(style={ 'background-image': `url(${url_for(theme.logo)})` } )
   .nav-title= config.title
   .nav-items-outer#menu

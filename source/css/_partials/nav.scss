@@ -22,15 +22,67 @@
 .nav-menu-icon {
   display: none;
   position: absolute;
-  height: 30px;
+  height: 40px;
   width: 40px;
-  margin: 15px 10px;
-  background-size: 40px auto;
-  background-repeat: no-repeat;
+  margin: 10px;
   cursor: pointer;
 
   @include mobile() {
     display: block;
+  }
+
+}
+
+.nav-menu-bread {
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  transition: transform .1806s cubic-bezier(0.04, 0.04, 0.12, 0.96);
+}
+
+.nav-menu-crust {
+  height: 1px;
+  position: absolute;
+  margin: auto;
+  left: 0;
+  right: 0;
+  width: 28px;
+
+  transition: .1596s cubic-bezier(0.52, 0.16, 0.52, 0.84) .1008s;
+
+  &__top {
+    top: 12px;
+    background-color: $color-primary;
+  }
+
+  &__bottom {
+    bottom: 12px;
+    background-color: $color-primary-brighter;
+  }
+}
+
+#menuState:checked {
+  display: block;
+}
+
+#menuState:checked~.nav-menu-icon {
+  .nav-menu-bread {
+    transition: transform .3192s cubic-bezier(0.04, 0.04, 0.12, 0.96) .1008s;
+
+    &__top {
+      transform: rotate(45deg);
+    }
+
+    &__bottom {
+      transform: rotate(-45deg);
+    }
+
+  }
+
+  .nav-menu-crust {
+    top: 20px;
+    bottom: 20px;
+    transition: .1806s cubic-bezier(0.04, 0.04, 0.12, 0.96);
   }
 }
 
