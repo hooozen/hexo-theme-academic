@@ -1,22 +1,54 @@
 void
 
-function () {
-  const onPageLoaded = () => document.dispatchEvent(
-    new Event('page:loaded'), {
+  function () {
+    const onPageLoaded = () => document.dispatchEvent(
+      new Event('page:loaded'), {
       bubbles: true
     }
-  )
+    )
 
-  if (document.readyState === 'loading') {
-    document.addEventListener('readystatechange', onPageLoaded, {
-      once: true
-    })
-  } else {
-    onPageLoaded()
-  }
-}()
+    if (document.readyState === 'loading') {
+      document.addEventListener('readystatechange', onPageLoaded, {
+        once: true
+      })
+    } else {
+      onPageLoaded()
+    }
+  }()
 
 Academic.utils = {
+  wrapImageWithFancyBox: function () {
+    document.querySelectorAll('.post-body :not(a) > img, .post-body > img').forEach(element => {
+      const $image = $(element);
+      const imageLink = $image.attr('data-src') || $image.attr('src');
+      const $imageWrapLink = $image.wrap(`<a class="fancybox fancybox.image" href="${imageLink}" itemscope itemtype="http://schema.org/ImageObject" itemprop="url"></a>`).parent('a');
+      if ($image.is('.post-gallery img')) {
+        $imageWrapLink.attr('data-fancybox', 'gallery').attr('rel', 'gallery');
+      } else if ($image.is('.group-picture img')) {
+        $imageWrapLink.attr('data-fancybox', 'group').attr('rel', 'group');
+      } else {
+        $imageWrapLink.attr('data-fancybox', 'default').attr('rel', 'default');
+      }
+
+      const imageTitle = $image.attr('title') || $image.attr('alt');
+      if (imageTitle) {
+        $imageWrapLink.append(`<p class="image-caption">${imageTitle}</p>`);
+        // Make sure img title tag will show correctly in fancybox
+        $imageWrapLink.attr('title', imageTitle).attr('data-caption', imageTitle);
+      }
+    });
+
+    $.fancybox.defaults.hash = false;
+    $('.fancybox').fancybox({
+      loop: true,
+      helpers: {
+        overlay: {
+          locked: false
+        }
+      }
+    });
+  },
+
   getScript: function (src, options = {}, legacyCondition) {
     if (typeof options === 'function') {
       return this.getScript(src, {
@@ -25,15 +57,15 @@ Academic.utils = {
     }
     const {
       condition = false,
-        attributes: {
-          id = '',
-          async = false,
-          defer = false,
-          crossOrigin = '',
-          dataset = {},
-          ...otherAttributes
-        } = {},
-        parentNode = null
+      attributes: {
+        id = '',
+        async = false,
+        defer = false,
+        crossOrigin = '',
+        dataset = {},
+        ...otherAttributes
+      } = {},
+      parentNode = null
     } = options;
     return new Promise((resolve, reject) => {
       if (condition) {

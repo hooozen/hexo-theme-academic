@@ -23,6 +23,10 @@ body {
       color: $color-hover
     }
   }
+
+  img {
+    max-width: 100%;
+  }
 }
 
 body.dark {
