@@ -26,6 +26,11 @@ cache:
 sidebar: 
   display: true
 
+toc:
+  max_depth: 3
+  min_depth: 1
+  list_number: false
+
 comments:
   enable: true
 

@@ -8,7 +8,8 @@
       .post-updated= full_date(post.updated)
 
   .outline-anchor
-    #outline.outline!=toc(post.content)
+
+    #outline.outline!=toc(post.content, {max_depth: theme.toc.max_depth, list_number: theme.toc.list_number})
 
   article.post-main!= post.content
 
