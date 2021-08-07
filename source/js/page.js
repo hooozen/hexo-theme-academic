@@ -17,11 +17,35 @@ function main() {
   var tocElInaitialTop = getTopDistance2Doc(tocEl);
 
   var menuEl = $('#menu');
-  var menuToggle = $('#menuToggle');
+  var menuToggleEl = $('#menuToggle');
 
   var themeIsDark = false;
 
-  var isMenuExpand = false;
+  var menuToggle = {
+    isExpand: false,
+
+    sleep() {
+      menuEl.style.height = "auto"
+      this.isExpand = false
+    },
+
+    expand() {
+      menuEl.style.height = window.innerHeight - 60 + 'px'
+      this.isExpand = true
+    },
+
+    fold() {
+      menuEl.style.height = "0px";
+      this.isExpand = false
+    },
+
+    toggle() {
+      console.log(this)
+      if (this.isExpand) this.fold()
+      else this.expand()
+    }
+  }
+
 
   setTocPos();
   document.addEventListener("scroll", setTocPos);
@@ -29,21 +53,39 @@ function main() {
   toggleEl.addEventListener("click", switchTheme);
   toggleEl.addEventListener("tap", switchTheme);
 
-  menuToggle.addEventListener('click', toggleMenu);
-  menuToggle.addEventListener('tap', toggleMenu);
+  menuToggleEl.addEventListener('click', function(e) {menuToggle.toggle()});
+  menuToggleEl.addEventListener('tap', function(e) {menuToggle.toggle()});
 
-  function toggleMenu() {
-    if (isMenuExpand) menuEl.style.height = "0px";
-    else menuEl.style.height="200px";
-    isMenuExpand = !isMenuExpand;
+  window.addEventListener('resize', resizeHanlder())
+
+  function resizeHanlder() {
+    var formerWidth = window.innerWidth
+    return function () {
+      widthBreakpointHanlder(formerWidth)
+      formerWidth = window.innerWidth
+    }
   }
+
+  function widthBreakpointHanlder(formerWidth) {
+
+    if (formerWidth < 767 && window.innerWidth >= 767) {
+      console.info('to desktop breakpoint')
+      menuToggle.sleep()
+    }
+
+    if (formerWidth >= 767 && window.innerWidth < 767) {
+      console.info('to mobile breakpoint')
+      menuToggle.fold()
+    }
+  }
+
 
   function switchTheme() {
     if (themeIsDark) {
-      toggleEl.className = 'toggle toggle--off'; 
+      toggleEl.className = 'toggle toggle--off';
       document.body.className = '';
     } else {
-      toggleEl.className = 'toggle toggle--on'; 
+      toggleEl.className = 'toggle toggle--on';
       document.body.className = 'dark';
     }
     themeIsDark = !themeIsDark;

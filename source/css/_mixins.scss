@@ -1,3 +1,9 @@
+@mixin dark() {
+  body.dark {
+    @content;
+  }
+}
+
 @mixin mobile() {
   @media (max-width: 767px) {
     @content;

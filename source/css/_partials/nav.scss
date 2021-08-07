@@ -67,13 +67,21 @@
 
   @include mobile() {
     position: absolute;
+    background-color: $color-bg-mask;
     top: 60px;
     height: 0px;
     border-bottom: 1px $color-border solid;
     overflow: hidden;
-    transition: 0.4s cubic-bezier(0.075, 0.82, 0.165, 1);
+    transition: height 0.4s cubic-bezier(0.075, 0.82, 0.165, 1);
     margin: 0;
     width: 100%;
+  }
+}
+
+@include dark() {
+  .nav-items-outer {
+    background-color: $dark-color-bg-mask;
+    border-bottom: 1px $color-border-dark solid;
   }
 }
 
@@ -85,11 +93,12 @@
 
   @include mobile() {
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: space-evenly;
     align-items: flex-start;
     background-color: inherit;
     margin: 0;
-    height: 200px;
+    height: 100%;
+    max-height: 240px;
     padding-left: 50px;
   }
 }
