@@ -20,13 +20,17 @@ $color-font-lighter: #888;
 $color-font-bold: #000;
 $color-font-content: #000;
 
-$color-bg: #fff;
-$color-bg-mask: rgba(255, 255, 255, 0.8);
+$light-color-bg: #fff;
+$light-color-font: #333;
+$light-color-bg-mask: rgba(128, 128, 128, 0.85);
 
+$color-bg: #000;
+$color-font: #000;
+$color-bg-mask: rgba(255, 255, 255, 0.85);
 
 $dark-color-bg: #0e0e0e;
 $dark-color-font: #666;
-$dark-color-bg-mask: rgba(15, 15, 15, 0.8);
+$dark-color-bg-mask: rgba(15, 15, 15, 0.85);
 
 
 //text

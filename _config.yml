@@ -1,11 +1,10 @@
-
 favicon:
   small: /images/favicon-16x16-academic.png
   medium: /images/favicon-32x32-academic.png
   apple_touch_icon: /images/apple-touch-icon-academic.png
   safari_pinned_tab: /images/logo.svg
 
-logo: /images/logo-academic.jpeg
+logo: /images/logo-academic.png
 
 icon: /images/icon-spider.png
 icon_menu: /images/icon-menu.png
@@ -23,7 +22,7 @@ author:
 cache:
   enable: false
 
-sidebar: 
+sidebar:
   display: true
 
 toc:
@@ -42,7 +41,7 @@ gitalk:
   repo: marie0909.github.io # Repository name to store issues
   client_id: 392609484cf5d6f9875b # GitHub Application Client ID
   client_secret: afeadfb746568b02b80c51c676a02fd832e91038 # GitHub Application Client Secret
-  admin_user: marie0909  # GitHub repo owner and collaborators, only these guys can initialize gitHub issues
+  admin_user: marie0909 # GitHub repo owner and collaborators, only these guys can initialize gitHub issues
   distraction_free_mode: true # Facebook-like distraction free mode
   # When the official proxy is not available, you can change it to your own proxy address
   proxy: https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token # This is official proxy adress
@@ -53,4 +52,3 @@ gitalk:
 
 css: css
 js: js
-

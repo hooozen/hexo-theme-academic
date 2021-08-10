@@ -132,4 +132,7 @@ Academic.utils = {
     });
   },
 
+  setThemoMode: function () {
+
+  }
 }

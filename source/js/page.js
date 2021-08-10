@@ -8,18 +8,18 @@ function $(s) {
 
 window.onload = main();
 
-
 function main() {
+
   var tocEl = $('#outline');
   var toggleEl = $('#toggle');
   var topMargin = 80;
   var tocElInaitialAbsTop = tocEl.style.top;
   var tocElInaitialTop = getTopDistance2Doc(tocEl);
 
+
   var menuEl = $('#menu');
   var menuToggleEl = $('#menuToggle');
 
-  var themeIsDark = false;
 
   var menuToggle = {
     isExpand: false,
@@ -46,6 +46,7 @@ function main() {
     }
   }
 
+  setThemeMode()
 
   setTocPos();
   document.addEventListener("scroll", setTocPos);
@@ -53,8 +54,8 @@ function main() {
   toggleEl.addEventListener("click", switchTheme);
   toggleEl.addEventListener("tap", switchTheme);
 
-  menuToggleEl.addEventListener('click', function(e) {menuToggle.toggle()});
-  menuToggleEl.addEventListener('tap', function(e) {menuToggle.toggle()});
+  menuToggleEl.addEventListener('click', function (e) { menuToggle.toggle() });
+  menuToggleEl.addEventListener('tap', function (e) { menuToggle.toggle() });
 
   window.addEventListener('resize', resizeHanlder())
 
@@ -80,15 +81,22 @@ function main() {
   }
 
 
-  function switchTheme() {
-    if (themeIsDark) {
+  function setThemeMode(mode) {
+    mode = mode || localStorage.getItem('themeMode')
+    if (mode === 'dark') {
       toggleEl.className = 'toggle toggle--off';
-      document.body.className = '';
+      document.body.className = 'light';
     } else {
       toggleEl.className = 'toggle toggle--on';
       document.body.className = 'dark';
     }
-    themeIsDark = !themeIsDark;
+    localStorage.setItem('themeMode', mode)
+    themeMode = mode
+  }
+
+  function switchTheme() {
+    mode = themeMode === 'dark' ? 'light' : 'dark'
+    setThemeMode(mode)
   }
 
   function getTopDistance2Doc(node) {
