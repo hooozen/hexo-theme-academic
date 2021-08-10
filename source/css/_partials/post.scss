@@ -57,11 +57,12 @@
   @include tablet-mobile() {
     display: none;
   }
+}
 
-  @include desktop-large() {}
+.main__content--index .outline {
+  display: none;
 
-  @include desktop-largest {
+  @include desktop-large() {
     display: inline-block;
   }
-
 }
