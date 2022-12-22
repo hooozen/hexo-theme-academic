@@ -1,0 +1,27 @@
+<div clsss="author-overview-outer">
+  <div class="author-overview">
+    <div class="author-face"
+         style="background-image: url({{ url_for(theme.author.face) }})"></div>
+    <div class="author-info">
+      <div class="author-name">{{ theme.author.name }}</div>
+      {% if theme.author.degree %}<div class="author-degree">{{ theme.author.degree }}</div>{% endif %}
+      {% if theme.author.motto %}<div class="author-motto">{{ theme.author.motto }}</div>{% endif %}
+      {% if theme.author.field %}<div class="author-field">{{ theme.author.field }}</div>{% endif %}
+      {% if theme.author.institution %}<div class="author-institution">{{ theme.author.institution }}</div>{% endif %}
+    </div>
+    <div class="author-social">
+      <a class="social-item icon-email"
+         href="mailto:{{ theme.author.email }}"
+         alt="email"
+         style="background-image: url({{ url_for(theme.icon)}})"></a>
+      <a class="social-item icon-scholar"
+         href="{{ theme.author.googleScholar }}"
+         alt="google scholar"
+         style="background-image: url({{ url_for(theme.icon)}})"></a>
+      <a class="social-item icon-institution"
+         href="{{ theme.author.institutionLink }}"
+         alt="institution"
+         style="background-image: url({{ url_for(theme.icon)}})"></a>
+    </div>
+  </div>
+</div>

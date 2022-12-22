@@ -1,0 +1,32 @@
+<meta charset="utf-8" />
+<meta name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=2.0"/>
+<meta name="theme-color" content="theme.android_chrome_color"/>
+<meta name="generator" content="Hexo{{ hexo_version }}"/>
+<title>{{ theme.author.name }}</title>
+{% if theme.favicon.apple_touch_icon %}
+  <link rel="apple-touch-icon"
+        sizes="180x180"
+        href="{{ url_for(theme.favicon.apple_touch_icon) }}"/>
+{% endif %}
+{% if theme.favicon.medium %}
+  <link rel="icon"
+        type="image/png"
+        sizes="32x32"
+        href="{{ url_for(theme.favicon.apple_touch_icon) }}"/>
+{% endif %}
+{% if theme.favicon.small %}
+  <link rel="icon"
+        type="image/png"
+        sizes="16x16"
+        href="{{ url_for(theme.favicon.apple_touch_icon) }}"/>
+{% endif %}
+<link rel="stylesheet"
+      type="text/css"
+      href="{{ url_for(theme.css) }}/main.css"/>
+{% if theme.gitalk.enable %}
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css"/>
+{% endif %}
+{{ academic_data('main', academic_config())}}
+{{ academic_js('config.js')}}

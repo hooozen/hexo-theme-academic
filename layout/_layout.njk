@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="{{ config.language }}">
+  <head>
+    {{ partial('_partials/head/head.njk') }}
+    {% include "_partials/head/head-unique.njk" %}
+  </head>
+  <body itemscope itemtype="http://schema.org/WebPage">
+    <div class="container">
+      <div class="header" itemscope itemtype="http://schema.org/WPHeader">
+        <div class="header-inner">{% include "_partials/header/index.njk" %}</div>
+      </div>
+      <div class="main">
+        {% block content %}
+        {% endblock content %}
+      </div>
+      {% include "_partials/foot.njk" %}
+    </div>
+    <script src="{{url_for('js/page.js')}}"></script>
+    {% include "_scripts/index.njk" %}
+    {{ academic_inject('bodyEnd') }}
+  </body>
+</html>

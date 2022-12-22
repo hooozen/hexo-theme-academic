@@ -1,0 +1,8 @@
+{% if theme.comments.enable %}
+  {% if theme.injects.comment.length == 1 %}
+    {% set inject_item = theme.injects.comment[0] %}
+    {{ partial(inject_item.layout, inject_item.locals, inject_item.options) }}
+  {% else %}
+    {% for comment in theme.injects.comment %}{{ partial(comment.layout, comment.locals, comment.options) }}{% endfor %}
+  {% endif %}
+{% endif %}

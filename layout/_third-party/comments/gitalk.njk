@@ -1,0 +1,6 @@
+{% set gitalk_data = academic_data('gitalk', theme.gitalk, {
+js: theme.gitalk.js,
+path_md5: gitalk_md5(page.path)
+}) %}
+{{ gitalk_data }}
+{{ academic_js('third-party/gitalk.js')}}

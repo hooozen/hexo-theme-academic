@@ -5,7 +5,7 @@ const path = require('path');
 const {
   points
 } = require('./utils');
-const defaultExtname = '.pug';
+const defaultExtname = '.njk';
 
 // Defining stylus types
 class StylusInject {

@@ -1,0 +1,13 @@
+<div class="nav">
+  {% include "menu_btn.njk" %}
+  <div class="nav-logo"
+       style="background-image: url({{ url_for(theme.logo)}})"></div>
+  <div class="nav-title">{{ config.title }}</div>
+  <div class="nav-items-outer" id="menu">
+    <div class="nav-items">
+      <a class="nav-item" href="{{ url_for('./')}}">Home</a>
+      <a class="nav-item" href="{{ url_for('/publications/')}}">publications</a>
+    </div>
+  </div>
+  <div class="nav-light-toggle">{{ partial('_partials/_components/toggle.njk')}}</div>
+</div>

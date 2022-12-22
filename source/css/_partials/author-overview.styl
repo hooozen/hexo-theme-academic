@@ -1,4 +1,4 @@
-@import "../mixins";
+@import "../_mixins";
 
 .author-overview-outer {
   display: flex;
@@ -14,9 +14,7 @@
   width: 160px;
   height: 160px;
   border-radius: 80px;
-  background: {
-    size: 160px 160px;
-  } 
+  background-size: 160px 160px;
   margin-bottom: 10px;
 }
 
@@ -54,8 +52,8 @@
       transform: translateY(-3px);
     }
   }
-  @include icon("email", 40, 3);
-  @include icon("scholar", 40, 2);
-  @include icon("institution", 40);
+  icon("email", 40, 3);
+  icon("scholar", 40, 2);
+  icon("institution", 40);
 }
 

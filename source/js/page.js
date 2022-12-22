@@ -1,7 +1,7 @@
 /* tool fun */
 
 function $(s) {
-  return document.querySelector(s)
+  return document.querySelector(s);
 }
 
 /* page */
@@ -25,28 +25,28 @@ function main() {
     isExpand: false,
 
     sleep() {
-      menuEl.style.height = "auto"
-      this.isExpand = false
+      menuEl.style.height = "auto";
+      this.isExpand = false;
     },
 
     expand() {
-      menuEl.style.height = window.innerHeight - 60 + 'px'
-      this.isExpand = true
+      menuEl.style.height = window.innerHeight - 60 + 'px';
+      this.isExpand = true;
     },
 
     fold() {
       menuEl.style.height = "0px";
-      this.isExpand = false
+      this.isExpand = false;
     },
 
     toggle() {
-      console.log(this)
-      if (this.isExpand) this.fold()
-      else this.expand()
+      console.log(this);
+      if (this.isExpand) this.fold();
+      else this.expand();
     }
-  }
+  };
 
-  setThemeMode()
+  setThemeMode();
 
   setTocPos();
   document.addEventListener("scroll", setTocPos);
@@ -54,35 +54,35 @@ function main() {
   toggleEl.addEventListener("click", switchTheme);
   toggleEl.addEventListener("tap", switchTheme);
 
-  menuToggleEl.addEventListener('click', function (e) { menuToggle.toggle() });
-  menuToggleEl.addEventListener('tap', function (e) { menuToggle.toggle() });
+  menuToggleEl.addEventListener('click', function (e) { menuToggle.toggle(); });
+  menuToggleEl.addEventListener('tap', function (e) { menuToggle.toggle(); });
 
-  window.addEventListener('resize', resizeHanlder())
+  window.addEventListener('resize', resizeHanlder());
 
   function resizeHanlder() {
-    var formerWidth = window.innerWidth
+    var formerWidth = window.innerWidth;
     return function () {
-      widthBreakpointHanlder(formerWidth)
-      formerWidth = window.innerWidth
-    }
+      widthBreakpointHanlder(formerWidth);
+      formerWidth = window.innerWidth;
+    };
   }
 
   function widthBreakpointHanlder(formerWidth) {
 
     if (formerWidth < 767 && window.innerWidth >= 767) {
-      console.info('to desktop breakpoint')
-      menuToggle.sleep()
+      console.info('to desktop breakpoint');
+      menuToggle.sleep();
     }
 
     if (formerWidth >= 767 && window.innerWidth < 767) {
-      console.info('to mobile breakpoint')
-      menuToggle.fold()
+      console.info('to mobile breakpoint');
+      menuToggle.fold();
     }
   }
 
 
   function setThemeMode(mode) {
-    mode = mode || localStorage.getItem('themeMode')
+    mode = mode || localStorage.getItem('themeMode');
     if (mode === 'dark') {
       toggleEl.className = 'toggle toggle--off';
       document.body.className = 'light';
@@ -90,13 +90,13 @@ function main() {
       toggleEl.className = 'toggle toggle--on';
       document.body.className = 'dark';
     }
-    localStorage.setItem('themeMode', mode)
-    themeMode = mode
+    localStorage.setItem('themeMode', mode);
+    themeMode = mode;
   }
 
   function switchTheme() {
-    mode = themeMode === 'dark' ? 'light' : 'dark'
-    setThemeMode(mode)
+    mode = themeMode === 'dark' ? 'light' : 'dark';
+    setThemeMode(mode);
   }
 
   function getTopDistance2Doc(node) {
@@ -106,7 +106,9 @@ function main() {
   }
 
   function setTocPos() {
+    console.log('setTocPos');
     var htmlDOM = document.documentElement;
+    console.log(htmlDOM.scrollTop, tocElInaitialTop, topMargin);
     if (htmlDOM.scrollTop > tocElInaitialTop - topMargin) {
       tocEl.style.position = "fixed";
       tocEl.style.top = topMargin + "px";

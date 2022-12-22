@@ -11,6 +11,5 @@ hexo.extend.filter.register('theme_inject', injects => {
 
   injects.comment.raw('gitalk', '<div class="comments gitalk-container"></div>', {}, { cache: true });
 
-  injects.bodyEnd.file('gitalk', path.join(hexo.theme_dir, 'layout/_third-party/comments/gitalk.pug'));
-
+  injects.bodyEnd.file('gitalk', path.join(hexo.theme_dir, 'layout/_third-party/comments/gitalk.njk'));
 });

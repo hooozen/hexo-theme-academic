@@ -1,6 +1,6 @@
-@import "../mixins";
-@import "../_variables.scss";
-@import "_components/toggle.scss";
+@import '../_mixins';
+@import '../_variables';
+@import '_components/toggle';
 
 .nav {
   height: 60px;
@@ -9,12 +9,12 @@
   margin: 0 auto;
   z-index: 999;
 
-  @include desktop-large {
+  +desktop-large() {
     width: 100%;
     max-width: 1400px;
   }
 
-  @include desktop-largest {
+  +desktop-largest() {
     width: 1400px;
   }
 }
@@ -27,17 +27,16 @@
   margin: 10px;
   cursor: pointer;
 
-  @include mobile() {
+  +mobile() {
     display: block;
   }
-
 }
 
 .nav-menu-bread {
   height: 40px;
   width: 40px;
   position: absolute;
-  transition: transform .1806s cubic-bezier(0.04, 0.04, 0.12, 0.96);
+  transition: transform 0.1806s cubic-bezier(0.04, 0.04, 0.12, 0.96);
 }
 
 .nav-menu-crust {
@@ -47,8 +46,7 @@
   left: 0;
   right: 0;
   width: 28px;
-
-  transition: top, bottom .1596s cubic-bezier(0.52, 0.16, 0.52, 0.84) .1008s;
+  transition: top, bottom 0.1596s cubic-bezier(0.52, 0.16, 0.52, 0.84) 0.1008s;
 
   &__top {
     top: 12px;
@@ -67,7 +65,7 @@
 
 #menuState:checked~.nav-menu-icon {
   .nav-menu-bread {
-    transition: transform .3192s cubic-bezier(0.04, 0.04, 0.12, 0.96) .1008s;
+    transition: transform 0.3192s cubic-bezier(0.04, 0.04, 0.12, 0.96) 0.1008s;
 
     &__top {
       transform: rotate(45deg);
@@ -76,13 +74,12 @@
     &__bottom {
       transform: rotate(-45deg);
     }
-
   }
 
   .nav-menu-crust {
     top: 20px;
     bottom: 20px;
-    transition: top, bottom, .1806s cubic-bezier(0.04, 0.04, 0.12, 0.96);
+    transition: top, bottom, 0.1806s cubic-bezier(0.04, 0.04, 0.12, 0.96);
   }
 }
 
@@ -95,7 +92,7 @@
   margin: 10px;
   background-size: 40px 40px;
 
-  @include mobile() {
+  +mobile() {
     left: 50%;
     transform: translateX(-30px);
   }
@@ -108,7 +105,7 @@
   line-height: 60px;
   font-size: 1.2em;
 
-  @include mobile() {
+  +mobile() {
     display: none;
   }
 }
@@ -117,7 +114,7 @@
   margin-left: 315px;
   margin-right: 60px;
 
-  @include mobile() {
+  +mobile() {
     position: absolute;
     background-color: $color-bg-mask;
     top: 60px;
@@ -130,8 +127,8 @@
   }
 }
 
-@include mobile() {
-  @include dark() {
++mobile() {
+  +dark() {
     .nav-items-outer {
       background-color: $dark-color-bg-mask;
       border-bottom: 1px $color-border-dark solid;
@@ -145,7 +142,7 @@
   justify-content: left;
   align-items: center;
 
-  @include mobile() {
+  +mobile() {
     flex-direction: column;
     justify-content: space-evenly;
     align-items: flex-start;
@@ -189,7 +186,7 @@
     color: $color-primary-brightest;
   }
 
-  @include mobile() {
+  +mobile() {
     margin: 0;
   }
 
@@ -201,8 +198,6 @@
       background: $color-primary-brighter;
     }
   }
-
-
 }
 
 .nav-light-toggle {

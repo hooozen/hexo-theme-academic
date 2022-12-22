@@ -1,0 +1,47 @@
+dark() {
+  body.dark {
+    {block};
+  }
+}
+
+mobile() {
+  @media (max-width: 767px) {
+    {block};
+  }
+}
+
+tablet-mobile() {
+  @media (max-width: 991px) {
+    {block};
+  }
+}
+
+tablet-desktop() {
+  @media (min-width: 768px) {
+    {block};
+  }
+}
+
+tablet() {
+  @media (min-width: 768px) and (max-width: 1200px) {
+    {block};
+  }
+}
+
+desktop-large() {
+  @media (min-width: 1200px) {
+    {block};
+  }
+}
+
+desktop-largest() {
+  @media (min-width: 1600px) {
+    {block};
+  }
+}
+
+icon(name, width, i = 0) {
+  .icon-{name} {
+    background-position: 0 i * width px;
+  }
+}

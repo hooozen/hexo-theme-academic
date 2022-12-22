@@ -1,0 +1,14 @@
+{% extends "_layout.njk" %}
+{% block content %}
+  <div class="main__content--index main__content">
+    <div class="sidebar-outer">
+      <div class="sidebar">{% include "_partials/author-overview/index.njk" %}</div>
+    </div>
+    <div class="main__content-inner">
+      {{ partial("_macro/post.njk", { post: page, is_index: true })}}
+      {% if theme.comments.index %}
+        {% include "_partials/comments.njk" %}
+      {% endif %}
+    </div>
+  </div>
+{% endblock content %}

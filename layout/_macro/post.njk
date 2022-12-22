@@ -1,0 +1,18 @@
+<div class="post-block">
+  <div class="post-head">
+    <div class="post-title">{{ post.title }}</div>
+    <div class="post-info">
+      <div class="post-author">{{ post.author or theme.author.name }}</div>
+      <div class="post-info__sep"></div>
+      <div class="post-updated updated">{{ full_date(post.updated)}}</div>
+    </div>
+  </div>
+  <div class="outline-anchor">
+    <div id="outline" class="outline">
+      {{ toc(post.content, {max_depth: theme.toc.max_depth, list_number: theme.toc.list_number})}}
+    </div>
+  </div>
+  <article class="pos-main">
+    {{ post.content }}
+  </article>
+</div>

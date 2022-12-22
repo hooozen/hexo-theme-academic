@@ -1,12 +1,10 @@
-@import "_variables.scss";
-@import "_animations.scss";
-
-@import "_mixins.scss";
-
-@import "_partials/nav.scss";
-@import "_partials/author-overview.scss";
-@import "_partials/post.scss";
-@import "_partials/toc.scss";
+@import '_variables';
+@import '_animations';
+@import '_mixins';
+@import '_partials/nav';
+@import '_partials/author-overview';
+@import '_partials/post';
+@import '_partials/toc';
 
 body {
   background-color: $color-bg;
@@ -22,7 +20,7 @@ body {
     text-decoration: none;
 
     &:hover {
-      color: $color-hover
+      color: $color-hover;
     }
   }
 
@@ -31,6 +29,7 @@ body {
   }
 }
 
+/*
 body.light {
   background-color: $light-color-bg;
   color: $light-color-font;
@@ -40,13 +39,22 @@ body.dark {
   background-color: $dark-color-bg;
   color: $dark-color-font;
 }
+*/
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: $dark-color-bg;
+    color: $dark-color-font;
+  }
+}
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
+@media (prefers-color-scheme: light) {
+  body {
+    background-color: $light-color-bg;
+    color: $light-color-font;
+  }
+}
+
+h1, h2, h3, h4, h5, h6 {
   padding-top: 61px;
   margin-top: -61px;
 }
@@ -77,6 +85,7 @@ h6 {
   flex-wrap: wrap;
   overflow-y: auto;
   justify-content: center;
+  min-height: 100vh;
   padding: 101px 0;
   width: 100%;
 }
@@ -84,49 +93,45 @@ h6 {
 .main__content {
   position: relative;
 
-  @include desktop-large {
+  +desktop-large() {
     width: 1200px;
   }
 
   &.main__content--index {
-    @include desktop-large {
+    +desktop-large() {
       width: 100%;
       max-width: 1400px;
     }
-
   }
 }
-
 
 .main__content-inner {
   padding: 0 15px;
   margin: 0 300px 0 0;
   width: auto;
 
-  @include tablet-mobile {
+  +tablet-mobile() {
     margin-right: 0;
     padding: 0 30px;
   }
-
 }
 
 .main__content--index .main__content-inner {
   margin-left: 300px;
   margin-right: 300px;
 
-  @include mobile {
+  +mobile() {
     margin: 0;
   }
 
-  @include tablet-mobile {
+  +tablet-mobile() {
     margin-right: 0;
   }
 
-  @include tablet {
+  +tablet() {
     margin-right: 0;
     padding: 0 30px;
   }
-
 }
 
 .sidebar-outer {
@@ -136,19 +141,19 @@ h6 {
   justify-content: center;
   align-items: center;
 
-  @include mobile {
+  +mobile() {
     position: static;
   }
 
-  @include tablet-desktop() {
+  +tablet-desktop() {
     position: fixed;
   }
 
-  @include desktop-large {
+  +desktop-large() {
     position: fixed;
   }
 
-  @include desktop-largest {
+  +desktop-largest() {
     position: fixed;
   }
 }
@@ -160,7 +165,7 @@ h6 {
   padding: 0 15px;
   box-sizing: border-box;
 
-  @include mobile() {
+  +mobile() {
     justify-content: center;
   }
 }

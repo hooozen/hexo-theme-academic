@@ -1,0 +1,9 @@
+{% extends "_layout.njk" %}
+{% block content %}
+  <div class="main__content">
+    <div class="main__content-inner">
+      {{ partial("_macro/post.njk", {post: page})}}
+      {% include "_partials/comments.njk" %}
+    </div>
+  </div>
+{% endblock content %}

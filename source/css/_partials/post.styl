@@ -1,4 +1,4 @@
-@import "../_mixins.scss";
+@import '../_mixins';
 
 .post-head {
   text-align: center;
@@ -6,11 +6,8 @@
 }
 
 .post-title {
-  font: {
-    family: $font-family-l;
-    size: $font-post-title;
-  }
-
+  font-family: $font-family-l;
+  font-size: $font-post-title;
   line-height: 1.25;
 }
 
@@ -54,7 +51,7 @@
     padding: 0;
   }
 
-  @include tablet-mobile() {
+  +tablet-mobile() {
     display: none;
   }
 }
@@ -62,7 +59,7 @@
 .main__content--index .outline {
   display: none;
 
-  @include desktop-large() {
+  +desktop-large() {
     display: inline-block;
   }
 }
