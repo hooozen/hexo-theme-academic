@@ -1,16 +1,23 @@
 @import '_variables';
 @import '_animations';
 @import '_mixins';
+@import 'normal';
+@import 'highlight';
 @import '_partials/nav';
 @import '_partials/author-overview';
 @import '_partials/post';
 @import '_partials/toc';
+@import '_partials/blog';
+
+html {
+  scroll-behavior: smooth;
+}
 
 body {
   background-color: $color-bg;
   font-size: $font-size-root;
   font-family: $font-family;
-  line-height: $line-height;
+  // line-height: $line-height;
   color: $color-font;
   // transition: color, background-color .1806s cubic-bezier(0.04, 0.04, 0.12, 0.96);
   margin: 0;
@@ -44,6 +51,10 @@ body.dark {
   body {
     background-color: $dark-color-bg;
     color: $dark-color-font;
+
+    .header {
+      border-color: $color-border-dark;
+    }
   }
 }
 
@@ -76,10 +87,6 @@ h1, h2, h3, h4, h5, h6 {
   z-index: 998;
 }
 
-.dark .header {
-  border-color: $color-border-dark;
-}
-
 .main {
   display: flex;
   flex-wrap: wrap;
@@ -91,6 +98,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .main__content {
+  width: 100%;
   position: relative;
 
   +desktop-large() {

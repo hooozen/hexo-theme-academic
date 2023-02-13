@@ -1,0 +1,25 @@
+{% extends "_layout.njk" %}
+{% block content %}
+  <div class="main__content--index main__content">
+    <div class="sidebar-outer">
+      <div class="sidebar">{% include "_partials/author-overview/index.njk" %}</div>
+    </div>
+    <div class="main__content-inner">
+      <div class="post-list">
+        {% for post in page.posts.toArray() %}
+          <div class="post-card">
+            <div class="post-title">
+              <a href="{{ url_for(post.path)}}">{{ post.title or "Untitled" }}</a>
+            </div>
+            <div class="post-excerpt">{{ post.excerpt }}</div>
+            <div class="post-info">
+              <div class="post-date">{{ date(post.date) }}</div>
+              {{ partial("./_macro/tags.njk", {tags: post.tags}) }}
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+      {{ paginator()}}
+    </div>
+  </div>
+{% endblock content %}

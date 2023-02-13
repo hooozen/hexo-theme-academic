@@ -9,6 +9,9 @@ logo: /images/logo-academic.png
 icon: /images/icon-spider.png
 icon_menu: /images/icon-menu.png
 
+blog:
+  enable: true
+
 author:
   name: Lei Li
   face: /images/author-face.jpg

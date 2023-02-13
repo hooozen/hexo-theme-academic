@@ -1,0 +1,7 @@
+{% if tags.length %}
+  <div class="post-tags">
+    {% for tag in tags.toArray() %}
+      <a class="post-tag" href="{{ url_for(tag.path)}}">#{{ tag.name }}</a>
+    {% endfor %}
+  </div>
+{% endif %}

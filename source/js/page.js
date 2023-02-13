@@ -11,7 +11,6 @@ window.onload = main();
 function main() {
 
   var tocEl = $('#outline');
-  var toggleEl = $('#toggle');
   var topMargin = 80;
   var tocElInaitialAbsTop = tocEl.style.top;
   var tocElInaitialTop = getTopDistance2Doc(tocEl);
@@ -46,13 +45,10 @@ function main() {
     }
   };
 
-  setThemeMode();
 
   setTocPos();
   document.addEventListener("scroll", setTocPos);
 
-  toggleEl.addEventListener("click", switchTheme);
-  toggleEl.addEventListener("tap", switchTheme);
 
   menuToggleEl.addEventListener('click', function (e) { menuToggle.toggle(); });
   menuToggleEl.addEventListener('tap', function (e) { menuToggle.toggle(); });
@@ -80,25 +76,6 @@ function main() {
     }
   }
 
-
-  function setThemeMode(mode) {
-    mode = mode || localStorage.getItem('themeMode');
-    if (mode === 'dark') {
-      toggleEl.className = 'toggle toggle--off';
-      document.body.className = 'light';
-    } else {
-      toggleEl.className = 'toggle toggle--on';
-      document.body.className = 'dark';
-    }
-    localStorage.setItem('themeMode', mode);
-    themeMode = mode;
-  }
-
-  function switchTheme() {
-    mode = themeMode === 'dark' ? 'light' : 'dark';
-    setThemeMode(mode);
-  }
-
   function getTopDistance2Doc(node) {
     var res = node.offsetTop || 0;
     if (node.parentNode) return res + getTopDistance2Doc(node.parentNode);
@@ -106,9 +83,7 @@ function main() {
   }
 
   function setTocPos() {
-    console.log('setTocPos');
     var htmlDOM = document.documentElement;
-    console.log(htmlDOM.scrollTop, tocElInaitialTop, topMargin);
     if (htmlDOM.scrollTop > tocElInaitialTop - topMargin) {
       tocEl.style.position = "fixed";
       tocEl.style.top = topMargin + "px";

@@ -6,8 +6,10 @@
   <div class="nav-items-outer" id="menu">
     <div class="nav-items">
       <a class="nav-item" href="{{ url_for('./')}}">Home</a>
-      <a class="nav-item" href="{{ url_for('/publications/')}}">publications</a>
+      <a class="nav-item" href="{{ url_for('/publications/')}}">Publications</a>
+      {% if theme.blog.enable %}
+        <a class="nav-item" href="{{ url_for('/blog/')}}">Blog</a>
+      {% endif %}
     </div>
   </div>
-  <div class="nav-light-toggle">{{ partial('_partials/_components/toggle.njk')}}</div>
 </div>

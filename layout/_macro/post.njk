@@ -5,6 +5,7 @@
       <div class="post-author">{{ post.author or theme.author.name }}</div>
       <div class="post-info__sep"></div>
       <div class="post-updated updated">{{ full_date(post.updated)}}</div>
+      {{ partial("./tags.njk", {tags: post.tags}) }}
     </div>
   </div>
   <div class="outline-anchor">
