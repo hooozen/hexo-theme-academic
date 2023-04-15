@@ -10,24 +10,27 @@
       {% if theme.selected_work.enable %}
         {% for work in theme.selected_work.list %}
           <div class="selected-work">
-            <div class="swork__title">{{work.title}}</div>
+            <div class="swork__head">
+              <div class="swork-title">{{work.title}}</div>
+              <div class="swork-journal">{{work.journal}}</div>
+            </div>
             <div class="swork__body">
               {% if work.cover %}
                 <div class="swork__cover">
-                  {% if work.cover.type == "video" %}
-                    <iframe width="100%" height="auto" src={{work.cover.url}} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                  {% if work.video %}
+                    <a class="swork__cover-img--video" target="blank" href={{work.video}}  style="background-image: url({{work.cover}})"></a>
                   {% else %}
-                    <img src={{work.cover.url}}>
+                    <div class="swork__cover-img" style="background-image: url({{work.cover}})"></div>
                   {% endif %}
                 </div>
               {% endif %}
               <a href={{work.url}} class="swork__abstract">{{work.abstract}}</a>
             </div>
             <div class="swork__foot">
-              <div class="swork__foot-item">{{work.journal}}</div>
               <div class="swork__foot-item">
-                keywords: {{ work.keywords }}
+                <span style="font-weight: bold">Keywords</span>: {{ work.keywords }}
               </div>
+
             </div>
           </div>
         {% endfor %}

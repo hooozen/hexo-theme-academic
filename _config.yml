@@ -34,6 +34,12 @@ links:
   - title: Oxford BioMedIA
     url: https://eng.ox.ac.uk/biomedical-image-analysis/
 
+sponsers: # or other, whatever
+  - url: /images/sp-CSC.jpg
+  - url: /images/sp-SJTU.png
+  - url: /images/sp-IBME_oxford.png
+  - url: /images/sp-CompBioMed.png
+
 cache:
   enable: false
 
@@ -53,59 +59,47 @@ selected_work:
       journal: STACOM, 369-380, 2023
       keywords: Digital twin; Deep computational models; Ventricular activation properties; ECG simulation
       abstract: "Patient-specific cardiac computational models are essential for the efficient realization of precision medicine and in-silico clinical trials using digital twins. Cardiac digital twins can provide non-invasive characterizations of cardiac functions for individual patients, and therefore are promising for the patient-specific diagnosis and therapy stratification. However, current workflows for both the anatomical and functional twinning phases, referring to the inference of model anatomy and parameter from clinical data, are not sufficiently efficient, robust, and accurate. In this work, we propose a deep learning-based patient-specific computational model, which can fuse both anatomical and electrophysiological information for the inference of ventricular activation properties, i.e., conduction velocities and root nodes. "
-      cover:
-        type: video
-        # url: /assets/LearnGC.jpg
-        url: https://drive.google.com/file/d/1UyWxRotsB8VvfYdJpYLawEJ3gye3h1F3/view?usp=sharing
+      cover: /images/sw-VAP_inference.png
+      video: https://drive.google.com/file/d/1UyWxRotsB8VvfYdJpYLawEJ3gye3h1F3/view?usp=sharing
 
     - title: "Medical Image Analysis on Left Atrial LGE MRI for Atrial Fibrillation Studies: A Review"
       url: https://doi.org/10.1016/j.media.2022.102360
       journal: Medical Image Analysis, vol. 77, 102360, 2022
       keywords: Atrial fibrillation; LGE MRI; Left atrium; Review
       abstract: LGE MRI is commonly used to visualize and quantify left atrial (LA) scars. The position and extent of LA scars provide important information on the pathophysiology and progression of atrial fibrillation (AF). Hence, LA LGE MRI computing and analysis are essential for computer-assisted diagnosis and treatment stratification of AF patients. Since manual delineations can be time-consuming and subject to intra- and inter-expert variability, automating this computing is highly desired, which nevertheless is still challenging and under-researched. This paper aims to provide a systematic review on computing methods for LA cavity, wall, scar, and ablation gap segmentation and quantification from LGE MRI, and the related literature for AF studies."
-      cover:
-        type: video
-        # url: /assets/wallpaper-2572384.jpg
-        url: //player.bilibili.com/player.html?aid=595674917&bvid=BV1PB4y1U7LF&cid=576809732&page=1
+      cover: /images/sw-AtrialReview.png
+      video: https://www.bilibili.com/video/BV1PB4y1U7LF?spm_id_from=333.999.0.0
 
     - title: "AtrialJSQnet: A New Framework for Joint Segmentation and Quantification of Left Atrium and Scars Incorporating Spatial and Shape Information"
       url: https://doi.org/10.1016/j.media.2021.102303
       journal: Medical Image Analysis, vol. 76, 102303, 2022
       keywords: Joint optimization; Atrial segmentation; Scar quantification; Spatial encoding; Shape attention
       abstract: "LA and atrial scar segmentation from LGE MRI is an important task in clinical practice. Previous methods normally solved the two tasks independently and ignored the intrinsic spatial relationship between LA and scars. In this work, we develop a new framework, namely AtrialJSQnet, where LA segmentation, scar projection onto the LA surface, and scar quantification are performed simultaneously in an end-to-end style.  We propose a mechanism of shape attention (SA) via an implicit surface projection to utilize the inherent correlation between LA cavity and scars. Besides, a spatial encoding (SE) loss is introduced to incorporate continuous spatial information of the target in order to reduce noisy patches in the predicted segmentation. "
-      cover:
-        type: video
-        # url: /assets/wallpaper-2572384.jpg
-        url: https://www.bilibili.com/video/BV1rA41177eV
+      cover: /images/sw-AtrialJSQnet.png
+      video: https://www.bilibili.com/video/BV1rA41177eV
 
     - title: "AtrialGeneral: Domain Generalization for Left Atrial Segmentation of Multi-Center LGE MRIs"
       url: https://link.springer.com/chapter/10.1007%2F978-3-030-87231-1_54
       journal: MICCAI, 557-566, 2021
       keywords: Atrial fibrillation; Left atrium; Multi-center LGE MRIs; Domain generalization
       abstract: "Though deep learning-based methods can provide promising LA segmentation results, they often generalize poorly to unseen domains, such as data from different scanners and/or sites. In this work, we collect 140 LGE MRIs from different centers with different levels of image quality. To evaluate the domain generalization ability of models on the LA segmentation task, we employ four commonly used semantic segmentation networks for the LA segmentation from multi-center LGE MRIs. Besides, we investigate three domain generalization strategies, i.e., histogram matching, mutual information based disentangled representation, and random style transfer, where a simple histogram matching is proved to be most effective."
-      cover:
-        type: video
-        # url: /assets/LearnGC.jpg
-        url: https://drive.google.com/file/d/1MaRG7UlvvQYXGnW9OAfTOEP3XrBONE9T/view?usp=share_link
+      cover: /images/sw-AtrialGeneral.png
+      video: https://drive.google.com/file/d/1MaRG7UlvvQYXGnW9OAfTOEP3XrBONE9T/view?usp=share_link
 
     - title: "Right Ventricular Segmentation from Short- and Long-Axis MRIs via Information Transition"
-      url: https://doi.org/10.1016/j.media.2019.101595
+      url: https://link.springer.com/chapter/10.1007/978-3-030-93722-5_28
       journal: STACOM, 259-267, 2021
-      keywords: Right ventricular (RV) segmentation from MRI is a crucial step for cardiac morphology and function analysis. However, current methods for the RV segmentation tend to suffer from performance degradation at the basal and apical slices of MRI. In this work, we propose an automatic RV segmentation framework, where the information from long-axis (LA) views is utilized to assist the segmentation of short-axis (SA) views via information transition. Specifically, we employed the transformed segmentation from LA views as a prior information, to extract the ROI from SA views for better segmentation. The information transition aims to remove the surrounding ambiguous regions in the SA views."
-      cover:
-        type: video
-        # url: /assets/LearnGC.jpg
-        url: https://drive.google.com/file/d/1urbB4YsjTbyUFOmDDCSevKk-W2XEoEtl/view
+      keywords: RV segmentation; Multi-view MRI; Information transition
+      abstract: Right ventricular (RV) segmentation from MRI is a crucial step for cardiac morphology and function analysis. However, current methods for the RV segmentation tend to suffer from performance degradation at the basal and apical slices of MRI. In this work, we propose an automatic RV segmentation framework, where the information from long-axis (LA) views is utilized to assist the segmentation of short-axis (SA) views via information transition. Specifically, we employed the transformed segmentation from LA views as a prior information, to extract the ROI from SA views for better segmentation. The information transition aims to remove the surrounding ambiguous regions in the SA views."
+      cover: /images/sw-M&Ms2_RV.png
+      video: https://drive.google.com/file/d/1urbB4YsjTbyUFOmDDCSevKk-W2XEoEtl/view
 
     - title: "Atrial Scar Quantification via Multi-Scale CNN in the Graph-Cuts Framework"
       url: https://doi.org/10.1016/j.media.2019.101595
       journal: Medical Image Analysis, vol. 60, 101595, 2020
       keywords: Atrial fibrillation; Left atrium; LGE MRI; Graph learning; Multi-scale CNN
       abstract: "LGE MRI appears to be a promising alternative for scar assessment in patients with atrial fibrillation (AF). Automating the quantification and analysis of atrial scars can be challenging due to the low image quality. In this work, we propose a fully automated method based on the graph-cuts framework, where the potentials of the graph are learned on a surface mesh of the LA using a multi-scale CNN. "
-      cover:
-        type: picture
-        url: /assets/LearnGC.jpg
-        # url: https://www.bilibili.com/video/BV1rA41177eV
+      cover: /images/sw-LearnGC.png
 
 comments:
   index: true

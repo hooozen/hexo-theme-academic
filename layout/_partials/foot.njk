@@ -1,5 +1,10 @@
 <div class="foot">
   <div class="foot__main">
+    <div class="foot-item foot-sponsers">
+      {% for sp in theme.sponsers %}
+        <img class="foot-sponser" height="60px" src={{sp.url}}>
+      {% endfor %}
+    </div>
     <div class="foot-item">
       <div class="foot-item__head">Links</div>
       <div class="foot-item__body">
@@ -10,7 +15,7 @@
     </div>
   </div>
   <div class="foot-copyright">
-    <div class="foot-copyright-line">{{ theme.author.name }} © 2021</div>
+    <div class="foot-copyright-line">{{ theme.author.name }} © 2023</div>
     <div class="foot-copyright-line">
     Theme | <a href="https://github.com/hooozen/hexo-theme-academic">Hexo Academic</a>
     </div>
