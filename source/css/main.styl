@@ -57,12 +57,20 @@ body.dark {
       border-color: $color-border-dark;
     }
   }
+
+  .foot {
+    background: $dark-color-bg-secondary;
+  }
 }
 
 @media (prefers-color-scheme: light) {
   body {
     background-color: $light-color-bg;
     color: $light-color-font;
+  }
+
+  .foot {
+    background: $light-color-bg-secondary;
   }
 }
 
@@ -94,7 +102,7 @@ h1, h2, h3, h4, h5, h6 {
   overflow-y: auto;
   justify-content: center;
   min-height: 100vh;
-  padding: 101px 0;
+  padding: 101px 0 0;
   width: 100%;
 }
 
@@ -185,12 +193,43 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .foot {
+  margin-top: 101px;
   padding: 10px 0;
-  font-size: 14px;
-  color: $color-font-secondary;
 
-  &-item {
+  .foot__main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+
+  .foot-item {
+  }
+
+  .foot-item__head {
+    font-size: 1.5em;
+    font-weight: bold;
+    margin: 8px 0;
+  }
+
+  .foot-item__body {
+    line-height: 1.5;
+  }
+
+  .foot-item-line {
+    display: block;
+    margin: 4px 0;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  .foot-copyright {
+    font-size: $font-smaller;
     text-align: center;
+  }
+
+  .foot-copyright-line {
     margin-bottom: 5px;
   }
 }

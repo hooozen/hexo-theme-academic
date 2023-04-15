@@ -4,6 +4,7 @@
     <div class="main__content-inner">
       {{ partial("_macro/post.njk", {post: page})}}
       {% include "_partials/comments.njk" %}
+      {% include "_partials/foot.njk" %}
     </div>
   </div>
 {% endblock content %}

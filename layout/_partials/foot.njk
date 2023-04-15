@@ -1,6 +1,18 @@
 <div class="foot">
-  <div class="foot-item">{{ theme.author.name }} © 2021</div>
-  <div class="foot-item">
+  <div class="foot__main">
+    <div class="foot-item">
+      <div class="foot-item__head">Links</div>
+      <div class="foot-item__body">
+        {% for link in theme.links %}
+          <a class="foot-item-line" href={{link.url}}>{{link.title}}</a>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+  <div class="foot-copyright">
+    <div class="foot-copyright-line">{{ theme.author.name }} © 2021</div>
+    <div class="foot-copyright-line">
     Theme | <a href="https://github.com/hooozen/hexo-theme-academic">Hexo Academic</a>
+    </div>
   </div>
 </div>

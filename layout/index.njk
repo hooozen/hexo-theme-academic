@@ -24,8 +24,8 @@
               <a href={{work.url}} class="swork__abstract">{{work.abstract}}</a>
             </div>
             <div class="swork__foot">
-              <div class="swork__journal">{{work.journal}}</div>
-              <div class="swork__keywords">
+              <div class="swork__foot-item">{{work.journal}}</div>
+              <div class="swork__foot-item">
                 keywords: {{ work.keywords }}
               </div>
             </div>
@@ -36,6 +36,7 @@
       {% if theme.comments.index %}
         {% include "_partials/comments.njk" %}
       {% endif %}
+      {% include "_partials/foot.njk" %}
     </div>
   </div>
 {% endblock content %}
