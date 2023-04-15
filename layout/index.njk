@@ -6,6 +6,33 @@
     </div>
     <div class="main__content-inner">
       {{ partial("_macro/post.njk", { post: page, is_index: true })}}
+
+      {% if theme.selected_work.enable %}
+        {% for work in theme.selected_work.list %}
+          <div class="selected-work">
+            <div class="swork__title">{{work.title}}</div>
+            <div class="swork__body">
+              {% if work.cover %}
+                <div class="swork__cover">
+                  {% if work.cover.type == "video" %}
+                    <iframe width="100%" height="auto" src={{work.cover.url}} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                  {% else %}
+                    <img src={{work.cover.url}}>
+                  {% endif %}
+                </div>
+              {% endif %}
+              <a href={{work.url}} class="swork__abstract">{{work.abstract}}</a>
+            </div>
+            <div class="swork__foot">
+              <div class="swork__journal">{{work.journal}}</div>
+              <div class="swork__keywords">
+                keywords: {{ work.keywords }}
+              </div>
+            </div>
+          </div>
+        {% endfor %}
+      {% endif %}
+
       {% if theme.comments.index %}
         {% include "_partials/comments.njk" %}
       {% endif %}

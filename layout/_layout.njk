@@ -3,6 +3,7 @@
   <head>
     {{ partial('_partials/head/head.njk') }}
     {% include "_partials/head/head-unique.njk" %}
+    {% block head %}{% endblock %}
   </head>
   <body itemscope itemtype="http://schema.org/WebPage">
     <div class="container">
@@ -10,8 +11,7 @@
         <div class="header-inner">{% include "_partials/header/index.njk" %}</div>
       </div>
       <div class="main">
-        {% block content %}
-        {% endblock content %}
+        {% block content %}{% endblock content %}
       </div>
       {% include "_partials/foot.njk" %}
     </div>

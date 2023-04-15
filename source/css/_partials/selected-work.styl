@@ -1,0 +1,60 @@
+@import '../_mixins';
+@import '../_variables';
+
+.selected-work {
+  text-align: justify;
+  margin: 20px 0;
+  overflow: hidden;
+}
+
+.swork__body {
+  display: flex;
+
+  +tablet-mobile() {
+    flex-wrap: wrap;
+  }
+}
+
+.swork__cover {
+  height: 150px;
+  flex: 0 0 200px;
+  overflow: hidden;
+  border-radius: 4px;
+  margin-right: 15px;
+
+  +tablet-mobile() {
+    margin: 5px;
+    flex: 1;
+  }
+}
+
+.swork__title {
+  margin: 5px 0;
+  font-size: 1.25em;
+  font-weight: bold;
+}
+
+.swork__abstract {
+  color: $color-font;
+  height: 150px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+
+  &:hover {
+    color: $color-font-secondary;
+  }
+
+  +tablet-mobile() {
+    height: 80px;
+  }
+}
+
+.swork__foot {
+  color: $color-font-secondary;
+  display: flex;
+  margin: 4px 0;
+}
+
+.swork__journal {
+  margin-right: 16px;
+}

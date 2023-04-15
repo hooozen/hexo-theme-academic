@@ -33,6 +33,28 @@ toc:
   min_depth: 1
   list_number: false
 
+selected_work:
+  enable: true
+  list:
+    - title: Multi-Modality Cardiac Image Analysis with Deep Learning
+      url: https://arxiv.org/abs/2111.04736
+      journal: Nature 2023.4
+      keywords: keywords, key, word
+      abstract: Accurate cardiac computing, analysis and modeling from multi-modality images are important for the diagnosis and treatment of cardiac disease. Late gadolinium enhancement magnetic resonance imaging (LGE MRI) is a promising technique to visualize and quantify myocardial infarction (MI) and atrial scars. Automating quantification of MI and atrial scars can be challenging due to the low image quality and complex enhancement patterns of LGE MRI.
+      cover:
+        type: video
+        # url: /assets/wallpaper-2572384.jpg
+        url: https://www.youtube.com/embed/w7B2yJsN39c
+
+    - title: Multi-Modality Cardiac Image Analysis with Deep Learning
+      url: https://arxiv.org/abs/2111.04736
+      journal: Nature 2023.4
+      keywords: keywords, key, word
+      abstract: Accurate cardiac computing, analysis and modeling from multi-modality images are important for the diagnosis and treatment of cardiac disease. Late gadolinium enhancement magnetic resonance imaging (LGE MRI) is a promising technique to visualize and quantify myocardial infarction (MI) and atrial scars. Automating quantification of MI and atrial scars can be challenging due to the low image quality and complex enhancement patterns of LGE MRI.
+      cover:
+        type: image
+        url: /assets/wallpaper-2572384.jpg
+
 comments:
   index: true
   enable: true
