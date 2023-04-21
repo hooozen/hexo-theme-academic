@@ -1,13 +1,24 @@
 @import '_variables';
+@import '_mixins';
 
 $grey-lighter = #ddd;
+$black-lighter = #3f3f3f;
 $table-border-color = $grey-lighter;
 $quote-border-color = $grey-lighter;
+$table-border-color--dark = $black-lighter;
+$quote-border-color--dark = $black-lighter;
 $table-odd-line-bg = #fafafa;
+$table-odd-line-bg--dark = #1b1b1b;
 
 html, body {
   margin: 0;
   padding: 0;
+}
+
+hr {
+  +dark() {
+    border-color: $black-lighter;
+  }
 }
 
 a {
@@ -22,7 +33,10 @@ blockquote {
   border-left: 4px solid $quote-border-color;
   margin: 0;
   padding-left: 1em;
-  color: $black-lighter;
+
+  +dark() {
+    border-left: 4px solid $quote-border-color--dark;
+  }
 }
 
 iframe, img, video {
@@ -41,6 +55,10 @@ caption, td, th {
   padding: 8px;
   vertical-align: middle;
   border: 1px solid $table-border-color;
+
+  +dark() {
+    border: 1px solid $table-border-color--dark;
+  }
 }
 
 caption {
@@ -53,6 +71,10 @@ th {
 
 tbody tr:nth-of-type(odd) {
   background: $table-odd-line-bg;
+
+  +dark() {
+    background: $table-odd-line-bg--dark;
+  }
 }
 
 figure figcaption {

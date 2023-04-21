@@ -5,12 +5,11 @@
       <div class="sidebar">{% include "_partials/author-overview/index.njk" %}</div>
     </div>
     <div class="main__content-inner">
-      {{ partial("_macro/post.njk", { post: page, is_index: true })}}
-
-      {% if theme.selected_work.enable %}
-        {{ partial("_macro/post_entry.njk", {list: theme.selected_work.list}) }}
-      {% endif %}
-
+      <div class="tag-page__title">#{{page.tag}}</div>
+      <div class="post-list">
+        {{partial("./_macro/post_entry.njk",{is_blog: true, list: page.posts.toArray()})}}
+      </div>
+      <div class="paginator">{{ paginator() }}</div>
       {% include "_partials/foot.njk" %}
     </div>
   </div>

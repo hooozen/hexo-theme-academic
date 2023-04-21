@@ -1,16 +1,41 @@
-@import 'hljs-github';
 @import '_variables';
+
+dark() {
+  @media (prefers-color-scheme: dark) {
+    {block};
+  }
+}
+
+@import 'hljs-github';
+
++dark() {
+  @import 'hljs-github-dark';
+}
+
+code, pre, figure.highlight {
+  background-color: #f7f7f7;
+
+  +dark() {
+    background-color: #0d1117;
+  }
+}
 
 $code-line-number-bg = #edeef0;
 $code-line-number = #888;
+$code-line-number-bg--dark = #181818;
+$code-line-number--dark = #666;
 
 /* highlight */
 .highlight figcaption {
   display: flex;
   justify-content: space-between;
-  background: $code-line-number-bg;
   padding: 0.1em 0.5em;
   font-size: $font-size-small;
+  background: $code-line-number-bg;
+
+  +dark() {
+    background: $code-line-number-bg--dark;
+  }
 }
 
 .highlight td {
@@ -68,10 +93,6 @@ figure.highlight pre {
   padding: 10px 0;
 }
 
-code, pre, figure.highlight {
-  background-color: #f7f7f7;
-}
-
 .gutter {
   padding: 0;
 }
@@ -82,4 +103,9 @@ figure.highlight .gutter pre {
   padding: 10px;
   color: $code-line-number;
   background-color: $code-line-number-bg;
+
+  +dark() {
+    color: $code-line-number--dark;
+    background-color: $code-line-number-bg--dark;
+  }
 }
