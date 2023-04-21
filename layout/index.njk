@@ -8,32 +8,7 @@
       {{ partial("_macro/post.njk", { post: page, is_index: true })}}
 
       {% if theme.selected_work.enable %}
-        {% for work in theme.selected_work.list %}
-          <div class="selected-work">
-            <div class="swork__head">
-              <div class="swork-title">{{work.title}}</div>
-              <div class="swork-journal">{{work.journal}}</div>
-            </div>
-            <div class="swork__body">
-              {% if work.cover %}
-                <div class="swork__cover">
-                  {% if work.video %}
-                    <a class="swork__cover-img--video" target="blank" href={{work.video}}  style="background-image: url({{work.cover}})"></a>
-                  {% else %}
-                    <div class="swork__cover-img" style="background-image: url({{work.cover}})"></div>
-                  {% endif %}
-                </div>
-              {% endif %}
-              <a href={{work.url}} target="blank" class="swork__abstract">{{work.abstract}}</a>
-            </div>
-            <div class="swork__foot">
-              <div class="swork__foot-item">
-                <span style="font-weight: bold">Keywords</span>: {{ work.keywords }}
-              </div>
-
-            </div>
-          </div>
-        {% endfor %}
+        {{ partial("_macro/post_entry.njk", {list: theme.selected_work.list}) }}
       {% endif %}
 
       {% if theme.comments.index %}

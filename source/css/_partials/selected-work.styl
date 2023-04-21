@@ -1,13 +1,13 @@
 @import '../_mixins';
 @import '../_variables';
 
-.selected-work {
+.post-entry {
   text-align: justify;
-  margin: 30px 0;
+  margin: 0 0 40px;
   overflow: hidden;
 }
 
-.swork__body {
+.post-entry__body {
   display: flex;
 
   +tablet-mobile() {
@@ -15,7 +15,7 @@
   }
 }
 
-.swork__cover {
+.post-entry__cover {
   height: 150px;
   flex: 0 0 200px;
   overflow: hidden;
@@ -28,7 +28,7 @@
   }
 }
 
-.swork__cover-img {
+.post-entry__cover-img {
   height: 100%;
   width: 100%;
   background: url() center center / contain no-repeat;
@@ -37,13 +37,14 @@
   box-sizing: border-box;
 
   &--video {
-    @extend .swork__cover-img;
+    @extend .post-entry__cover-img;
     display: block;
     position: relative;
 
     &:hover {
       &::after {
         background-size: 60px 60px;
+        background-color: rgba(0, 0, 0, 0.7);
       }
     }
 
@@ -56,34 +57,44 @@
       bottom: 0;
       right: 0;
       background: rgba(0, 0, 0, 0.4) url('/images/icon-play.svg') center center / 50px 50px no-repeat;
-      transition: all 0.3s ease-out;
+      transition: all 0.2s ease-out;
     }
   }
 }
 
-.swork__head {
-  margin: 5px 0;
+.post-entry__head {
+  margin: 0 0 10px;
 }
 
-.swork-title {
+.post-entry-title {
   font-weight: bold;
   font-size: 1.25em;
 }
 
-.swork-journal {
+.post-entry-journal {
   font-style: italic;
 }
 
-.swork__abstract {
+.post-entry__abstract {
+  display: block !important;
   color: inherit;
-  height: 150px;
+  max-height: 140px;
   overflow: hidden;
   text-overflow: ellipsis;
   position: relative;
+  line-height: 20px;
 
   &:hover {
     color: inherit;
   }
+
+  +tablet-mobile() {
+    max-height: 120px;
+  }
+}
+
+.post-entry__abstract--paper {
+  @extend .post-entry__abstract;
 
   &::after {
     position: absolute;
@@ -102,18 +113,14 @@
       background: linear-gradient(to left, $light-color-bg, $light-color-bg 4em, transparent);
     }
   }
-
-  +tablet-mobile() {
-    height: 80px;
-  }
 }
 
-.swork__foot {
+.post-entry__foot {
   color: $color-font-secondary;
-  margin: 4px 0;
+  margin: 10px 0;
 }
 
-.swork__foot-item {
+.post-entry__foot-item {
   display: inline-block;
   margin-right: 16px;
 }

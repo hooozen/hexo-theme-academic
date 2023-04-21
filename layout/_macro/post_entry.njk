@@ -1,0 +1,37 @@
+{% for info in list %}
+  <div class="post-entry">
+    <div class="post-entry__head">
+      <div class="post-entry-title">{{info.title}}</div>
+      {% if is_blog %}
+        <div class="post-entry-journal">{{info.author or config.author}}, {{info.date.format('MMM Do YY')}}</div>
+      {% else %}
+        <div class="post-entry-journal">{{info.journal}}</div>
+      {% endif %}
+    </div>
+    <div class="post-entry__body">
+      {% if info.cover %}
+        <div class="post-entry__cover">
+          {% if info.video %}
+            <a class="post-entry__cover-img--video" target="blank" href={{info.video}}  style="background-image: url({{info.cover}})"></a>
+          {% else %}
+            <div class="post-entry__cover-img" style="background-image: url({{info.cover}})"></div>
+          {% endif %}
+        </div>
+      {% endif %}
+      {% if is_blog %}
+        <a href={{ url_for(info.path) }} class="post-entry__abstract">{{strip_html(info.excerpt)}}</a>
+      {% else %}
+        <a href={{ info.url }} target="blank" class="post-entry__abstract--paper">{{info.abstract}}</a>
+      {% endif %}
+    </div>
+    <div class="post-entry__foot">
+      <div class="post-entry__foot-item">
+        {% if info.keywords %}
+          <span style="font-weight: bold">Keywords</span>: {{ info.keywords }}
+        {% else %}
+          {{ partial("./tags.njk", {tags: info.tags}) }}
+        {% endif %}
+      </div>
+    </div>
+  </div>
+{% endfor %}

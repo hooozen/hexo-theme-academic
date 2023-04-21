@@ -5,19 +5,9 @@
       <div class="sidebar">{% include "_partials/author-overview/index.njk" %}</div>
     </div>
     <div class="main__content-inner">
+
       <div class="post-list">
-        {% for post in page.posts.toArray() %}
-          <div class="post-card">
-            <div class="post-title">
-              <a href="{{ url_for(post.path)}}">{{ post.title or "Untitled" }}</a>
-            </div>
-            <div class="post-excerpt">{{ post.excerpt }}</div>
-            <div class="post-info">
-              <div class="post-date">{{ date(post.date) }}</div>
-              {{ partial("./_macro/tags.njk", {tags: post.tags}) }}
-            </div>
-          </div>
-        {% endfor %}
+        {{partial("./_macro/post_entry.njk",{is_blog: true, list: page.posts.toArray()})}}
       </div>
       {{ paginator()}}
     </div>

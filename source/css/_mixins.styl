@@ -1,5 +1,5 @@
 dark() {
-  body.dark {
+  @media (prefers-color-scheme: dark) {
     {block};
   }
 }
@@ -42,6 +42,6 @@ desktop-largest() {
 
 icon(name, width, i = 0) {
   .icon-{name} {
-    background-position: 0 i * width px;
+    background-position: 0 (i * width)px;
   }
 }
